@@ -36,7 +36,7 @@ export default function AboutPage() {
         <div className="vision-mark"><div>N<span>B</span>D<span className="adv-dot">.</span></div><span>IDEAS INTO IMPACT</span></div>
         <div><span className="eyebrow light"><span className="eyebrow-dot" /> OUR DIRECTION</span><h2>A digital partner for <em>what comes next.</em></h2><p>We aim to create useful, well-designed products that help ambitious businesses work smarter, connect better and keep growing.</p><div className="vision-check"><CheckCircle2 size={20}/> Practical solutions, shaped around real needs</div><div className="vision-check"><CheckCircle2 size={20}/> A thoughtful balance of design and engineering</div></div>
       </div></section>
-      <section className="mini-cta"><div className="container"><div><span>LET'S GET ACQUAINTED</span><h2>Tell us what you're building.</h2></div><Link href="/contact" className="btn btn-lime">Talk to NBD <ArrowUpRight size={18}/></Link></div></section>
+      <section className="mini-cta"><div className="container"><div><span>LET&apos;S GET ACQUAINTED</span><h2>Tell us what you&apos;re building.</h2></div><Link href="/contact" className="btn btn-lime">Talk to NBD <ArrowUpRight size={18}/></Link></div></section>
     </>
   );
 }

@@ -33,7 +33,7 @@ export default function ServicesPage() {
           ))}
         </div>
       </div></section>
-      <section className="mini-cta"><div className="container"><div><span>YOUR IDEA DESERVES A PLAN</span><h2>Not sure where to start?</h2></div><Link href="/contact" className="btn btn-lime">Let's figure it out <ArrowRight size={18}/></Link></div></section>
+      <section className="mini-cta"><div className="container"><div><span>YOUR IDEA DESERVES A PLAN</span><h2>Not sure where to start?</h2></div><Link href="/contact" className="btn btn-lime">Let&apos;s figure it out <ArrowRight size={18}/></Link></div></section>
     </>
   );
 }
