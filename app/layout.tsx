@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
 import "./upgrade.css";
 import "./next-wave.css";
+import "./atelier.css";
 
-const manrope = Manrope({ subsets: ["latin"], variable: "--font-body", display: "swap" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 
 const canonical = "https://niloy-datta.github.io/tech-startup/";
@@ -30,12 +31,12 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: "NBD — Websites, Apps & Digital Solutions" },
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#10131b" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#090b12" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${space.variable}`}>
+      <body className={`${inter.variable} ${space.variable}`}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} />
         <SiteHeader />
