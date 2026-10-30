@@ -119,6 +119,15 @@ export const portfolioProjects: readonly PortfolioProject[] = [
     kind: "Prototype / exploration",
   },
   {
+    id: "webdriver",
+    name: "WebDriver & QA Automation",
+    category: "Developer tools",
+    summary: "A browser automation and software testing exploration focused on making web workflows easier to verify.",
+    technologies: ["WebDriver", "QA", "Automation"],
+    visual: "terminal",
+    kind: "Prototype / exploration",
+  },
+  {
     id: "rentals",
     name: "Global House Renting",
     category: "Web platforms",
