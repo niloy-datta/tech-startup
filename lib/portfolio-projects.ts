@@ -67,8 +67,6 @@ export const portfolioProjects: readonly PortfolioProject[] = [
     visual: "finance",
     kind: "Built project",
     featured: true,
-    url: "https://github.com/niloy-datta/ExpenseTracker-ReactNative",
-    urlLabel: "View source",
   },
   {
     id: "gym",
@@ -164,6 +162,8 @@ export const portfolioProjects: readonly PortfolioProject[] = [
     technologies: ["Next.js", "TypeScript", "2D tools"],
     visual: "architecture",
     kind: "Built project",
+    url: "https://github.com/niloy-datta/roomforge",
+    urlLabel: "View source",
   },
   {
     id: "novacommerce",
