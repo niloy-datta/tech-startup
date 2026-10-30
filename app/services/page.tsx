@@ -3,10 +3,11 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { ServiceIcon } from "@/components/service-icon";
 import { services } from "@/lib/site";
+import { ProjectShowcase } from "@/components/project-showcase";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Explore NBD's website, mobile app, custom software, UX/UI, AI integration and product support services.",
+  description: "Explore NBD services and selected engineering projects across web, mobile, AI, developer tools, games and business systems.",
 };
 
 export default function ServicesPage() {
@@ -15,7 +16,7 @@ export default function ServicesPage() {
       <section className="interior-hero">
         <div className="container"><span className="eyebrow light"><span className="eyebrow-dot" /> OUR EXPERTISE</span>
           <h1>Solutions made for <em>your next move.</em></h1>
-          <p>Ideas come in all shapes and sizes. We bring design thinking and modern development together to help yours move forward.</p>
+          <p>From websites and mobile apps to AI, games and business systems, our approach draws on the products and problems our team has explored.</p>
         </div>
       </section>
       <section className="section service-details-section"><div className="container">
@@ -33,6 +34,8 @@ export default function ServicesPage() {
           ))}
         </div>
       </div></section>
+
+      <ProjectShowcase mode="featured" />
 
       <section className="section deliverables-section">
         <div className="container">
