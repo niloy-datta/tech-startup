@@ -30,7 +30,7 @@ export default function SolutionsPage() {
     <p className="solution-disclaimer">Concept directions only; scope, deliverables, timeline and price depend on the specific project.</p>
   </div></section>
   <section className="solution-next-section"><div className="container solution-next-inner">
-    <div><span className="eyebrow light"><span className="eyebrow-dot"/> YOUR IDEA IS UNIQUE</span><h2>Don&apos;t see it listed? <em>Let&apos;s explore it.</em></h2><p>Tell us what you're trying to solve, and we'll explore a practical starting point.</p></div>
+    <div><span className="eyebrow light"><span className="eyebrow-dot"/> YOUR IDEA IS UNIQUE</span><h2>Don&apos;t see it listed? <em>Let&apos;s explore it.</em></h2><p>Tell us what you&apos;re trying to solve, and we&apos;ll explore a practical starting point.</p></div>
     <Link href="/contact" className="btn btn-lime">Start a conversation <ArrowRight size={18}/></Link>
   </div></section>
  </>;
