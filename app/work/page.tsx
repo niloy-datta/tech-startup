@@ -6,7 +6,7 @@ import { ProjectShowcase } from "@/components/project-showcase";
 export const metadata: Metadata = {
   title: "Our Work & Engineering Projects",
   description: "Explore NBD team projects and engineering experience across websites, Flutter and React Native apps, AI, developer tools, games and business platforms.",
-  alternates: { canonical: "/work/" },
+  alternates: { canonical: "https://niloy-datta.github.io/tech-startup/work/" },
 };
 
 export default function WorkPage() {
