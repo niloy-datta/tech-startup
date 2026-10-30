@@ -15,6 +15,7 @@ import {
   Zap,
 } from "lucide-react";
 import { ServiceIcon } from "@/components/service-icon";
+import { ProjectPlanner } from "@/components/project-planner";
 import { workSteps, services } from "@/lib/site";
 
 const questions = [
@@ -32,17 +33,17 @@ export default function Home() {
         <div className="hero-glow" aria-hidden="true" />
         <div className="container hero-layout">
           <div className="hero-copy">
-            <span className="eyebrow light"><span className="eyebrow-dot" /> DIGITAL EXPERIENCES. REAL POSSIBILITIES.</span>
-            <h1>We make <span className="gradient-word">digital</span> feel different<span className="headline-dot">.</span></h1>
-            <p className="hero-description">From websites that win attention to mobile apps people love using, NBD helps ambitious ideas become remarkable digital products.</p>
+            <span className="eyebrow light"><span className="eyebrow-dot" /> YOUR PRODUCT STUDIO FOR WHAT&apos;S NEXT</span>
+            <h1>We turn big <span className="gradient-word">ideas</span> into bold digital experiences<span className="headline-dot">.</span></h1>
+            <p className="hero-description">Websites that make an impression. Apps people love to use. Smart software that moves your business forward. We design and build it all, together.</p>
             <div className="hero-actions">
-              <Link href="/contact" className="btn btn-lime">Tell us your idea <ArrowUpRight size={19} /></Link>
+              <Link href="/contact" className="btn btn-lime">Start a project <ArrowUpRight size={19} /></Link>
               <Link href="/services" className="btn btn-ghost">Explore services <ArrowRight size={18} /></Link>
             </div>
             <div className="hero-signals">
-              <span><BadgeCheck size={17} /> Thoughtful design</span>
+              <span><BadgeCheck size={17} /> Design-led thinking</span>
               <span><Zap size={17} /> Modern engineering</span>
-              <span><Globe2 size={17} /> Built for the web & beyond</span>
+              <span><Globe2 size={17} /> Websites · Apps · Software</span>
             </div>
           </div>
           <div className="hero-art" aria-label="Illustrative digital product dashboard and mobile app concept">
@@ -51,7 +52,7 @@ export default function Home() {
             <div className="floating-symbol floating-symbol-a"><Sparkles size={23}/></div>
             <div className="floating-symbol floating-symbol-b"><Code2 size={22}/></div>
             <div className="dash-window">
-              <div className="dash-topbar"><div className="window-dots"><i/><i/><i/></div><span>product workspace</span><span className="dash-top-icon">✳</span></div>
+              <div className="dash-topbar"><div className="window-dots"><i/><i/><i/></div><span>NBD / digital experience</span><span className="dash-top-icon">✳</span></div>
               <div className="dash-body">
                 <div className="dash-sidebar">
                   <span className="dash-logo">n<span>·</span></span>
@@ -62,9 +63,9 @@ export default function Home() {
                 </div>
                 <div className="dash-main">
                   <div className="dash-greeting"><span>OVERVIEW / CONCEPT UI</span><span>↗</span></div>
-                  <h3>Good ideas look<br/>better in motion.</h3>
+                  <h3>Products that make<br/>business feel effortless.</h3>
                   <div className="dash-chart">
-                    <div className="chart-top"><span>Growth, visualized</span><span className="chart-dot"/> </div>
+                    <div className="chart-top"><span>Experience concept / sample UI</span><span className="chart-dot"/> </div>
                     <svg viewBox="0 0 360 126" role="img" aria-label="Decorative upward-trending graph illustration">
                       <defs>
                         <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#cfff54" stopOpacity=".25"/><stop offset="1" stopColor="#cfff54" stopOpacity="0"/></linearGradient>
@@ -75,8 +76,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="dash-mini-cards">
-                    <div><span className="dash-muted">Design first</span><strong>01 <ArrowUpRight size={14}/></strong></div>
-                    <div><span className="dash-muted">Built to evolve</span><strong>02 <ArrowUpRight size={14}/></strong></div>
+                    <div><span className="dash-muted">Designed with purpose</span><strong>01 <ArrowUpRight size={14}/></strong></div>
+                    <div><span className="dash-muted">Ready to scale</span><strong>02 <ArrowUpRight size={14}/></strong></div>
                   </div>
                 </div>
               </div>
@@ -92,7 +93,7 @@ export default function Home() {
                 <div className="mobile-bottom"><span>Designed for people</span><ArrowUpRight size={16}/></div>
               </div>
             </div>
-            <div className="visual-sticker"><span className="sticker-icon"><Check size={19}/></span><span>Build something<br/><strong>meaningful.</strong></span></div>
+            <div className="visual-sticker"><span className="sticker-icon"><Check size={19}/></span><span>More than code.<br/><strong>A better experience.</strong></span></div>
           </div>
         </div>
         <div className="hero-bottom container"><span><ArrowDownRight size={18} /> SCROLL TO EXPLORE</span><span>DESIGN <span className="mini-star">✳</span> DEVELOPMENT <span className="mini-star">✳</span> INNOVATION</span></div>
@@ -102,18 +103,30 @@ export default function Home() {
         <div className="ticker-inner"><span>WEB EXPERIENCES</span><Sparkles/><span>MOBILE APPLICATIONS</span><Sparkles/><span>PRODUCT DESIGN</span><Sparkles/><span>SMART SOFTWARE</span><Sparkles/><span>WEB EXPERIENCES</span><Sparkles/></div>
       </section>
 
+
+      <section className="studio-promise" aria-label="Our approach in three words">
+        <div className="container studio-promise-grid">
+          <div className="promise-intro"><span>THE NBD MINDSET</span><strong>Made for what&apos;s next.</strong></div>
+          <div className="promise-item"><span className="promise-number">01 /</span><span><strong>Design with intention.</strong><small>Experiences people want to use.</small></span></div>
+          <div className="promise-item"><span className="promise-number">02 /</span><span><strong>Build for the real world.</strong><small>Engineering that supports growth.</small></span></div>
+          <div className="promise-item"><span className="promise-number">03 /</span><span><strong>Think beyond launch.</strong><small>Products ready to evolve.</small></span></div>
+        </div>
+      </section>
+
       <section className="section services-section" id="services">
         <div className="container">
           <div className="section-intro split-heading">
-            <div><span className="eyebrow"><span className="eyebrow-dot" /> WHAT WE DO</span><h2>Everything your idea needs to <em>move forward.</em></h2></div>
-            <p>One digital partner for the important parts: shaping the experience, building the technology and making it better over time.</p>
+            <div><span className="eyebrow"><span className="eyebrow-dot" /> WHAT WE DO</span><h2>One team. <em>Every digital possibility.</em></h2></div>
+            <p>From the first spark to the final detail, we bring product thinking, striking design and serious engineering together.</p>
           </div>
           <div className="services-grid">
             {services.map((item) => (
-              <Link href={`/services#${item.slug}`} className="service-card" key={item.number}>
+              <Link href={`/services#${item.slug}`} className={`service-card service-card-${item.icon}`} key={item.number}>
                 <div className="service-card-top"><span className="service-icon"><ServiceIcon name={item.icon} size={26}/></span><span className="service-num">/ {item.number}</span></div>
+                <div className="service-card-visual" aria-hidden="true"><ServiceIcon name={item.icon} size={116}/></div>
                 <h3>{item.name}</h3>
                 <p>{item.short}</p>
+                <span className="service-sample">{item.points[0]}</span>
                 <span className="service-more">Explore service <ArrowUpRight size={19}/></span>
               </Link>
             ))}
@@ -125,7 +138,7 @@ export default function Home() {
       <section className="section possibility-section" id="possibilities">
         <div className="container">
           <div className="section-intro split-heading">
-            <div><span className="eyebrow light"><span className="eyebrow-dot" /> WHAT WE COULD BUILD</span><h2>Different challenges.<br/><em>One creative mindset.</em></h2></div>
+            <div><span className="eyebrow light"><span className="eyebrow-dot" /> WHAT WE COULD BUILD</span><h2>Beautifully different.<br/><em>Purposefully built.</em></h2></div>
             <p>Every product starts with a problem worth solving. Here are a few types of solutions we can help bring to life—not client case studies.</p>
           </div>
           <div className="possibility-grid">
@@ -151,6 +164,8 @@ export default function Home() {
           <p className="concept-disclaimer"><CircleDot size={14} /> Concept illustrations show potential product directions; they are not claimed client projects.</p>
         </div>
       </section>
+
+      <ProjectPlanner />
 
       <section className="section process-section" id="process">
         <div className="container">
@@ -202,7 +217,7 @@ export default function Home() {
       <section className="prefooter-section">
         <div className="container prefooter-inner">
           <span className="prefooter-mark"><Sparkles size={22} /> YOUR NEXT MOVE STARTS HERE</span>
-          <div><h2>Have a bold idea?<br/><em>Let&apos;s build it right.</em></h2><Link href="/contact" className="round-arrow" aria-label="Start a project with NBD"><ArrowUpRight size={40}/></Link></div>
+          <div><h2>The next big thing?<br/><em>It starts with you.</em></h2><Link href="/contact" className="round-arrow" aria-label="Start a project with NBD"><ArrowUpRight size={40}/></Link></div>
           <p>Tell us what you&apos;re imagining, solving or trying to change. We&apos;d love to hear about it.</p>
           <Link href="/contact" className="prefooter-mobile-link">Start a project <ChevronRight size={18}/></Link>
         </div>
