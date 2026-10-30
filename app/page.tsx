@@ -167,21 +167,26 @@ export default function Home() {
       </section>
 
 
-      <section className="section solution-highlights-section" id="solutions">
+      <section className="section atelier-industries" id="solutions" aria-labelledby="industries-title">
         <div className="container">
-          <div className="section-intro split-heading">
-            <div><span className="eyebrow"><span className="eyebrow-dot"/> WHAT YOU COULD CREATE</span><h2>Great ideas. <em>Real business problems.</em></h2></div>
-            <p>Explore different product directions, from customer experiences to smarter internal operations. These are illustrative possibilities, not client case studies.</p>
+          <div className="atelier-industries-top">
+            <div>
+              <span className="eyebrow"><span className="eyebrow-dot" /> WHERE WE CREATE VALUE</span>
+              <h2 id="industries-title">Designed for people. <em>Built for business.</em></h2>
+            </div>
+            <p>From customer-facing platforms to the systems behind the scenes, we shape digital products around real operational needs.</p>
           </div>
-          <div className="solution-highlights">
-            {solutions.slice(0,3).map((item) => <Link href={`/solutions#${item.slug}`} className="solution-highlight-card" key={item.slug}>
-              <span className="solution-highlight-number">{item.number} / SOLUTION</span>
-              <div className="solution-highlight-symbol" aria-hidden="true">{item.number}</div>
-              <div className="solution-highlight-copy"><span>{item.name}</span><h3>{item.headline}</h3><p>{item.description}</p></div>
-              <span className="solution-highlight-link">Explore possibilities <ArrowUpRight size={18}/></span>
-            </Link>)}
+          <div className="atelier-industries-list">
+            {solutions.slice(0, 3).map((item) => (
+              <Link className="atelier-industry" href={`/solutions#${item.slug}`} key={item.slug}>
+                <span className="atelier-industry-number">{item.number} /</span>
+                <span className="atelier-industry-name">{item.name}</span>
+                <span className="atelier-industry-copy">{item.description}</span>
+                <span className="atelier-industry-arrow" aria-hidden="true"><ArrowUpRight size={21} /></span>
+              </Link>
+            ))}
           </div>
-          <div className="section-link"><Link href="/solutions">Explore all solution directions <ArrowRight size={18}/></Link></div>
+          <div className="atelier-industries-footer"><Link href="/solutions">Explore all solutions <ArrowRight size={18} /></Link></div>
         </div>
       </section>
 
