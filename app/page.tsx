@@ -132,7 +132,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div className="section-link"><Link href="/services">See all services <ArrowRight size={18}/></Link></div>
+          <div className="section-link"><Link href="/services">See all services <ArrowRight size={18}/></Link><Link href="/work">See projects from our team <ArrowUpRight size={18}/></Link></div>
         </div>
       </section>
 
