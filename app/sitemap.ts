@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import type { MetadataRoute } from "next";
 const origin = "https://niloy-datta.github.io/tech-startup";
 export default function sitemap(): MetadataRoute.Sitemap {
