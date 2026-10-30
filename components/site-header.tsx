@@ -3,12 +3,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { mainNav } from "@/lib/site";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    function dismiss(event: KeyboardEvent) { if (event.key === "Escape") setOpen(false); }
+    document.addEventListener("keydown", dismiss);
+    return () => document.removeEventListener("keydown", dismiss);
+  }, []);
 
 
   return (
@@ -24,6 +30,7 @@ export function SiteHeader() {
               href={item.href}
               key={item.label}
               className={pathname === item.href ? "nav-link active" : "nav-link"}
+              aria-current={pathname === item.href ? "page" : undefined}
               onClick={() => setOpen(false)}
             >
               {item.label}

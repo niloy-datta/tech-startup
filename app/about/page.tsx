@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle2, Compass, HeartHandshake, Lightbulb, Wrench } from "lucide-react";
 
-export const metadata: Metadata = { title: "About NBD", description: "Meet NBD: a digital development company focused on useful websites, mobile apps and custom solutions shaped around people and business goals." };
+export const metadata: Metadata = {
+  alternates: { canonical: "https://niloy-datta.github.io/tech-startup/about/" }, title: "About NBD", description: "Meet NBD: a digital development company focused on useful websites, mobile apps and custom solutions shaped around people and business goals." };
 
 const beliefs = [
   { icon: Compass, title: "Start with the why", description: "Clear thinking up front gives every product a stronger direction." },

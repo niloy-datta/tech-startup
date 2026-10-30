@@ -14,6 +14,8 @@ export function ProjectPlanner() {
   const [priority, setPriority] = useState<(typeof priorities)[number]>("Standout design");
   const [copied, setCopied] = useState(false);
 
+  const contactQuery = new URLSearchParams({ product, stage, priority }).toString();
+
   const brief = [
     "NBD — Project starter brief",
     "Project: " + product,
@@ -91,7 +93,7 @@ export function ProjectPlanner() {
             <h3>{product === "Still exploring" ? "Start with the possibilities." : "Let&apos;s make your " + product.toLowerCase() + " happen."}</h3>
             <p>{descriptions[product]}</p>
             <div className="planner-result-actions">
-              <Link href="/contact" className="btn btn-lime">Let&apos;s talk about it <ArrowUpRight size={18}/></Link>
+              <Link href={`/contact?${contactQuery}`} className="btn btn-lime">Let&apos;s talk about it <ArrowUpRight size={18}/></Link>
               <button type="button" className="planner-copy" onClick={copyBrief} aria-label="Copy your project brief">
                 {copied ? <Check size={17}/> : <ClipboardCopy size={17}/>} {copied ? "Copied!" : "Copy brief"}
               </button>

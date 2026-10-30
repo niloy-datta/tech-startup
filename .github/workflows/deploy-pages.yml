@@ -38,6 +38,8 @@ jobs:
           GITHUB_PAGES: 'true'
           NEXT_TELEMETRY_DISABLED: '1'
           NEXT_PUBLIC_NBD_CONTACT_EMAIL: ${{ vars.NBD_CONTACT_EMAIL }}
+      - name: Validate static export
+        run: npm run test:static
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:

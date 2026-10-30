@@ -82,3 +82,12 @@ Builds made for GitHub Pages set `GITHUB_PAGES=true`, so Next.js automatically a
 In [GitHub → Settings → Secrets and variables → Actions → Variables](https://github.com/niloy-datta/tech-startup/settings/variables/actions), create a **repository variable** named `NBD_CONTACT_EMAIL` with the confirmed NBD business email address; then rerun the Pages workflow. It is used only as a public build-time contact destination.
 
 Because this is static hosting, the contact form **opens an email draft**; it does not submit to a backend. Static GitHub Pages does not support Next.js API routes or server-side actions.
+
+## NBD experience and release checks
+
+- Main service pages: website development, mobile applications, custom software, product design, AI workflows and support.
+- [Solutions](/solutions): illustrative commerce, operations, SaaS, mobile and automation concepts. These are **not** claimed client projects.
+- The homepage Project Starter preserves chosen product, stage and priority in the Contact page URL.
+- Contact forms open an email draft only when `NEXT_PUBLIC_NBD_CONTACT_EMAIL` is set; otherwise they offer **copy enquiry**. They do not submit to a backend.
+- GitHub Pages exports a sitemap and robots file at `/tech-startup/sitemap.xml` and `/tech-startup/robots.txt`.
+- Run `npm run lint && npm run typecheck && npm run build && npm run test:static` to validate a local static export. GitHub Actions runs these checks before publishing.

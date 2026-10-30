@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { ArrowUpRight, Mail, MessageCircle, Sparkles } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { contactEmail } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Contact", description: "Tell NBD about your website, mobile app or custom software project. Start a conversation about your next digital product." };
+export const metadata: Metadata = {
+  alternates: { canonical: "https://niloy-datta.github.io/tech-startup/contact/" }, title: "Contact", description: "Tell NBD about your website, mobile app or custom software project. Start a conversation about your next digital product." };
 
 export default function ContactPage() {
   return (
@@ -21,7 +23,7 @@ export default function ContactPage() {
           <div className="contact-way"><div><MessageCircle size={23}/></div><section><strong>Have questions?</strong><span>Tell us the challenge. We&apos;ll explore the possibilities.</span></section></div>
           <div className="contact-note"><Sparkles size={22}/><p>Not sure about your requirements yet? No problem. We can start with the idea.</p></div>
         </div>
-        <div className="contact-form-wrap"><div className="form-heading"><span>PROJECT INQUIRY</span><h3>Tell us a little about it.</h3><p>A few details help us understand what you&apos;re looking for.</p></div><ContactForm/></div>
+        <div className="contact-form-wrap"><div className="form-heading"><span>PROJECT INQUIRY</span><h3>Tell us a little about it.</h3><p>A few details help us understand what you&apos;re looking for.</p></div><Suspense fallback={<p>Loading project form…</p>}><ContactForm /></Suspense></div>
       </div></section>
     </>
   );

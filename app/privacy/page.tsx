@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "Privacy", description: "Privacy information for the NBD company website." };
+export const metadata: Metadata = {
+  alternates: { canonical: "https://niloy-datta.github.io/tech-startup/privacy/" }, title: "Privacy", description: "Privacy information for the NBD company website." };
 
 export default function PrivacyPage() {
   return <><section className="interior-hero small-interior"><div className="container"><span className="eyebrow light"><span className="eyebrow-dot" /> SITE INFORMATION</span><h1>Privacy <em>matters.</em></h1></div></section>

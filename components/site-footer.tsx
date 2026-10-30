@@ -25,6 +25,7 @@ export function SiteFooter() {
           <p>© {new Date().getFullYear()} NBD. Built with intention.</p>
           <div className="footer-links">
             <Link href="/services">Services</Link>
+            <Link href="/solutions">Solutions</Link>
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
             <Link href="/privacy">Privacy</Link>

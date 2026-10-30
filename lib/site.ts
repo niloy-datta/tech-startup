@@ -6,6 +6,7 @@ export const contactEmail = process.env.NEXT_PUBLIC_NBD_CONTACT_EMAIL ?? "";
 
 export const mainNav = [
   { label: "Services", href: "/services" },
+  { label: "Solutions", href: "/solutions" },
   { label: "About", href: "/about" },
   { label: "Our approach", href: "/#process" },
   { label: "Contact", href: "/contact" },

@@ -17,6 +17,7 @@ import {
 import { ServiceIcon } from "@/components/service-icon";
 import { ProjectPlanner } from "@/components/project-planner";
 import { workSteps, services } from "@/lib/site";
+import { solutions } from "@/lib/solutions";
 
 const questions = [
   { q: "Can NBD build both a website and a mobile app?", a: "Yes. We can plan cohesive web and mobile experiences, or focus on one product first and expand as your needs evolve." },
@@ -165,6 +166,25 @@ export default function Home() {
         </div>
       </section>
 
+
+      <section className="section solution-highlights-section" id="solutions">
+        <div className="container">
+          <div className="section-intro split-heading">
+            <div><span className="eyebrow"><span className="eyebrow-dot"/> WHAT YOU COULD CREATE</span><h2>Great ideas. <em>Real business problems.</em></h2></div>
+            <p>Explore different product directions, from customer experiences to smarter internal operations. These are illustrative possibilities, not client case studies.</p>
+          </div>
+          <div className="solution-highlights">
+            {solutions.slice(0,3).map((item) => <Link href={`/solutions#${item.slug}`} className="solution-highlight-card" key={item.slug}>
+              <span className="solution-highlight-number">{item.number} / SOLUTION</span>
+              <div className="solution-highlight-symbol" aria-hidden="true">{item.number}</div>
+              <div className="solution-highlight-copy"><span>{item.name}</span><h3>{item.headline}</h3><p>{item.description}</p></div>
+              <span className="solution-highlight-link">Explore possibilities <ArrowUpRight size={18}/></span>
+            </Link>)}
+          </div>
+          <div className="section-link"><Link href="/solutions">Explore all solution directions <ArrowRight size={18}/></Link></div>
+        </div>
+      </section>
+
       <ProjectPlanner />
 
       <section className="section process-section" id="process">
@@ -179,6 +199,22 @@ export default function Home() {
               <h3>{item.title}</h3><p>{item.description}</p>
             </div>)}
           </div>
+        </div>
+      </section>
+
+
+      <section className="section ways-section">
+        <div className="container">
+          <div className="section-intro split-heading">
+            <div><span className="eyebrow"><span className="eyebrow-dot"/> WAYS TO COLLABORATE</span><h2>The right starting point, <em>for your stage.</em></h2></div>
+            <p>We can start with clarity, build a focused first version, or improve a product you already have. The exact scope is always discussed together.</p>
+          </div>
+          <div className="ways-grid">
+            <div className="way-card"><span className="way-index">01 / STRATEGY</span><h3>Discover & define.</h3><p>Turn an early idea into a clear problem statement, user journey, features and next steps.</p><div className="way-footer">Best for early ideas <ArrowUpRight size={18}/></div></div>
+            <div className="way-card way-card-featured"><span className="way-index">02 / BUILD</span><h3>Design & launch.</h3><p>Bring a focused product to life with thoughtful UI, practical development and a plan for release.</p><div className="way-footer">Best for new products <ArrowUpRight size={18}/></div></div>
+            <div className="way-card"><span className="way-index">03 / EVOLVE</span><h3>Improve & scale.</h3><p>Refine an existing website, app or internal platform with better usability and purposeful enhancements.</p><div className="way-footer">Best for growing teams <ArrowUpRight size={18}/></div></div>
+          </div>
+          <div className="ways-cta"><p>Not sure which fits? We can start by understanding the problem.</p><Link href="/contact" className="text-link">Tell us what you need <ArrowUpRight size={18}/></Link></div>
         </div>
       </section>
 
