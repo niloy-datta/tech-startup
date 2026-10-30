@@ -26,6 +26,19 @@ jobs:
           node-version: 22
       - name: Configure Pages
         uses: actions/configure-pages@v5
+      - name: Validate Pages publishing source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mode="$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .build_type)"
+          echo "GitHub Pages publishing mode: $mode"
+          if [[ "$mode" != "workflow" ]]; then
+            echo "::error title=Incorrect GitHub Pages source::Settings > Pages > Build and deployment > Source must be GitHub Actions, not Deploy from a branch."
+            echo "Fix here: https://github.com/$GITHUB_REPOSITORY/settings/pages"
+            exit 1
+          fi
       - name: Install dependencies
         run: npm install --no-audit --no-fund
       - name: Lint
@@ -55,3 +68,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Checkout for live smoke checks
+        uses: actions/checkout@v4
+      - name: Set up Node.js for smoke checks
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify live website after deploy
+        run: node scripts/check-live.mjs
