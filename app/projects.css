@@ -154,3 +154,6 @@
 @media(prefers-reduced-motion:reduce){
   .portfolio-card,.portfolio-filter,.portfolio-art-window,.portfolio-card-link svg{transition:none!important}
 }
+/* Compact navigation to service capabilities and project evidence. */
+.services-section .section-link{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:22px}
+@media(max-width:570px){.services-section .section-link{flex-direction:column;gap:16px}}
