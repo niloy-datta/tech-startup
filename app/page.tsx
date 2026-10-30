@@ -34,12 +34,12 @@ export default function Home() {
         <div className="hero-glow" aria-hidden="true" />
         <div className="container hero-layout">
           <div className="hero-copy">
-            <span className="eyebrow light"><span className="eyebrow-dot" /> YOUR PRODUCT STUDIO FOR WHAT&apos;S NEXT</span>
-            <h1>We turn big <span className="gradient-word">ideas</span> into bold digital experiences<span className="headline-dot">.</span></h1>
-            <p className="hero-description">Websites that make an impression. Apps people love to use. Smart software that moves your business forward. We design and build it all, together.</p>
+            <span className="eyebrow light"><span className="eyebrow-dot" /> INDEPENDENT DIGITAL PRODUCT STUDIO</span>
+            <h1>We turn ambitious <span className="gradient-word">ideas</span> into remarkable digital products<span className="headline-dot">.</span></h1>
+            <p className="hero-description">We design and engineer distinctive websites, delightful mobile apps and intelligent software for ambitious businesses. From first idea to lasting impact.</p>
             <div className="hero-actions">
               <Link href="/contact" className="btn btn-lime">Start a project <ArrowUpRight size={19} /></Link>
-              <Link href="/services" className="btn btn-ghost">Explore services <ArrowRight size={18} /></Link>
+              <Link href="/#possibilities" className="btn btn-ghost">Explore our work <ArrowRight size={18} /></Link>
             </div>
             <div className="hero-signals">
               <span><BadgeCheck size={17} /> Design-led thinking</span>
@@ -69,7 +69,7 @@ export default function Home() {
                     <div className="chart-top"><span>Experience concept / sample UI</span><span className="chart-dot"/> </div>
                     <svg viewBox="0 0 360 126" role="img" aria-label="Decorative upward-trending graph illustration">
                       <defs>
-                        <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#cfff54" stopOpacity=".25"/><stop offset="1" stopColor="#cfff54" stopOpacity="0"/></linearGradient>
+                        <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#b4a7ff" stopOpacity=".25"/><stop offset="1" stopColor="#cfff54" stopOpacity="0"/></linearGradient>
                       </defs>
                       <path d="M0 125V100C42 94 52 109 93 83S157 97 204 63 259 73 298 32 338 35 360 15V125Z" fill="url(#chartFill)"/>
                       <path d="M0 100C42 94 52 109 93 83S157 97 204 63 259 73 298 32 338 35 360 15" fill="none" stroke="#cfff54" strokeWidth="3" strokeLinecap="round"/>
@@ -117,8 +117,8 @@ export default function Home() {
       <section className="section services-section" id="services">
         <div className="container">
           <div className="section-intro split-heading">
-            <div><span className="eyebrow"><span className="eyebrow-dot" /> WHAT WE DO</span><h2>One team. <em>Every digital possibility.</em></h2></div>
-            <p>From the first spark to the final detail, we bring product thinking, striking design and serious engineering together.</p>
+            <div><span className="eyebrow"><span className="eyebrow-dot" /> WHAT WE DO</span><h2>Digital experiences. <em>Thoughtfully engineered.</em></h2></div>
+            <p>Strategy, design and software engineering in one collaborative process. Explore what we can build together.</p>
           </div>
           <div className="services-grid">
             {services.map((item) => (
@@ -167,21 +167,26 @@ export default function Home() {
       </section>
 
 
-      <section className="section solution-highlights-section" id="solutions">
+      <section className="section atelier-industries" id="solutions" aria-labelledby="industries-title">
         <div className="container">
-          <div className="section-intro split-heading">
-            <div><span className="eyebrow"><span className="eyebrow-dot"/> WHAT YOU COULD CREATE</span><h2>Great ideas. <em>Real business problems.</em></h2></div>
-            <p>Explore different product directions, from customer experiences to smarter internal operations. These are illustrative possibilities, not client case studies.</p>
+          <div className="atelier-industries-top">
+            <div>
+              <span className="eyebrow"><span className="eyebrow-dot" /> WHERE WE CREATE VALUE</span>
+              <h2 id="industries-title">Designed for people. <em>Built for business.</em></h2>
+            </div>
+            <p>From customer-facing platforms to the systems behind the scenes, we shape digital products around real operational needs.</p>
           </div>
-          <div className="solution-highlights">
-            {solutions.slice(0,3).map((item) => <Link href={`/solutions#${item.slug}`} className="solution-highlight-card" key={item.slug}>
-              <span className="solution-highlight-number">{item.number} / SOLUTION</span>
-              <div className="solution-highlight-symbol" aria-hidden="true">{item.number}</div>
-              <div className="solution-highlight-copy"><span>{item.name}</span><h3>{item.headline}</h3><p>{item.description}</p></div>
-              <span className="solution-highlight-link">Explore possibilities <ArrowUpRight size={18}/></span>
-            </Link>)}
+          <div className="atelier-industries-list">
+            {solutions.slice(0, 3).map((item) => (
+              <Link className="atelier-industry" href={`/solutions#${item.slug}`} key={item.slug}>
+                <span className="atelier-industry-number">{item.number} /</span>
+                <span className="atelier-industry-name">{item.name}</span>
+                <span className="atelier-industry-copy">{item.description}</span>
+                <span className="atelier-industry-arrow" aria-hidden="true"><ArrowUpRight size={21} /></span>
+              </Link>
+            ))}
           </div>
-          <div className="section-link"><Link href="/solutions">Explore all solution directions <ArrowRight size={18}/></Link></div>
+          <div className="atelier-industries-footer"><Link href="/solutions">Explore all solutions <ArrowRight size={18} /></Link></div>
         </div>
       </section>
 

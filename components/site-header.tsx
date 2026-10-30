@@ -40,7 +40,7 @@ export function SiteHeader() {
             Start a project <ArrowUpRight size={16} />
           </Link>
         </nav>
-        <Link href="/contact" className="nav-cta">Let&apos;s talk <ArrowUpRight size={16} /></Link>
+        <Link href="/contact" className="nav-cta">Start a project <ArrowUpRight size={16} /></Link>
         <button
           type="button"
           className="nav-toggle"
