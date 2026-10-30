@@ -15,7 +15,7 @@ import {
   Zap,
 } from "lucide-react";
 import { ServiceIcon } from "@/components/service-icon";
-import { process, services } from "@/lib/site";
+import { workSteps, services } from "@/lib/site";
 
 const questions = [
   { q: "Can NBD build both a website and a mobile app?", a: "Yes. We can plan cohesive web and mobile experiences, or focus on one product first and expand as your needs evolve." },
@@ -159,7 +159,7 @@ export default function Home() {
             <p>We believe great digital products are built with good questions, honest collaboration and a process that keeps moving.</p>
           </div>
           <div className="process-grid">
-            {process.map((item) => <div className="process-card" key={item.step}>
+            {workSteps.map((item) => <div className="process-card" key={item.step}>
               <div className="process-number">{item.step} <span><ArrowUpRight size={20}/></span></div>
               <h3>{item.title}</h3><p>{item.description}</p>
             </div>)}

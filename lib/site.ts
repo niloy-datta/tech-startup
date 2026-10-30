@@ -68,7 +68,7 @@ export const services = [
   },
 ] as const;
 
-export const process = [
+export const workSteps = [
   { step: "01", title: "Discover", description: "We define the problem, audience and what success should look like." },
   { step: "02", title: "Design", description: "We translate ideas into clear journeys and a distinctive product direction." },
   { step: "03", title: "Develop", description: "We build iteratively with a focus on quality, performance and usability." },
