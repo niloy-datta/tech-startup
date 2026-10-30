@@ -19,7 +19,7 @@ export default function WorkPage() {
           <p>Explore projects and hands-on engineering experience from the people behind NBD. Each direction begins with a problem to solve and room to experiment.</p>
           <div className="work-intro-actions">
             <Link href="#project-catalog" className="btn btn-lime">Browse projects <ArrowRight size={18} /></Link>
-            <Link href="/contact" className="btn btn-ghost">Let's build yours <ArrowUpRight size={18} /></Link>
+            <Link href="/contact" className="btn btn-ghost">Let&apos;s build yours <ArrowUpRight size={18} /></Link>
           </div>
         </div>
       </section>
