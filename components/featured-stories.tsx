@@ -7,11 +7,11 @@ export function FeaturedStories() {
       <div className="container">
         <div className="nbd-stories-heading">
           <div>
-            <span className="nbd-section-label"><span /> SELECTED WORK / 2026</span>
-            <h2 id="nbd-stories-title">Not just ideas.<br /><em>Things we build.</em></h2>
+            <span className="nbd-section-label"><span /> FEATURED EXPERIENCES / NBD</span>
+            <h2 id="nbd-stories-title">Real thinking.<br /><em>Real things built.</em></h2>
           </div>
           <div className="nbd-stories-intro">
-            <p>Explore products, prototypes and hands-on engineering experience from the people behind NBD—across AI, apps, interactive experiences and business systems.</p>
+            <p>Explore how the team behind NBD approaches problems across AI, interactive experiences, mobile products and operational software.</p>
             <Link href="/work" className="nbd-inline-link">Explore all projects <ArrowUpRight size={18} /></Link>
           </div>
         </div>
@@ -31,7 +31,7 @@ export function FeaturedStories() {
               </div>
               <span className="nbd-agri-floating"><Leaf size={16} /> Agriculture, intelligently.</span>
             </div>
-            <div className="nbd-story-body"><div><h3>AgriLume AI</h3><p>Exploring more useful agriculture intelligence.</p></div><Link href="/work" aria-label="Explore NBD projects including AgriLume AI" className="nbd-story-arrow"><ArrowUpRight size={22} /></Link></div>
+            <div className="nbd-story-body"><div><h3>AgriLume AI</h3><p>Exploring more useful agriculture intelligence.</p></div><Link href="/work/#project-agrilume" aria-label="Explore AgriLume AI in our work" className="nbd-story-arrow"><ArrowUpRight size={22} /></Link></div>
           </article>
 
           <article className="nbd-story nbd-story-space">
@@ -60,7 +60,7 @@ export function FeaturedStories() {
               </div>
               <div className="nbd-finance-float"><Check size={16} /> All in one place</div>
             </div>
-            <div className="nbd-story-body"><div><h3>Expense Tracker</h3><p>Personal finance, made simpler and clearer.</p></div><Link href="/work" aria-label="Explore NBD projects including Expense Tracker" className="nbd-story-arrow"><ArrowUpRight size={22} /></Link></div>
+            <div className="nbd-story-body"><div><h3>Expense Tracker</h3><p>Personal finance, made simpler and clearer.</p></div><Link href="/work/#project-expense" aria-label="Explore Expense Tracker in our work" className="nbd-story-arrow"><ArrowUpRight size={22} /></Link></div>
           </article>
 
           <article className="nbd-story nbd-story-logistics">
@@ -76,7 +76,7 @@ export function FeaturedStories() {
                 <div className="nbd-logistics-footer">WORKFLOWS &nbsp; / &nbsp; VISIBILITY &nbsp; / &nbsp; COLLABORATION <span>✳</span></div>
               </div>
             </div>
-            <div className="nbd-story-body"><div><h3>Logistics & Supply Chain</h3><p>Systems thinking for complex business operations.</p></div><Link href="/work" aria-label="Explore NBD business engineering work" className="nbd-story-arrow"><ArrowUpRight size={22} /></Link></div>
+            <div className="nbd-story-body"><div><h3>Logistics & Supply Chain</h3><p>Systems thinking for complex business operations.</p></div><Link href="/work/#project-logistics" aria-label="Explore logistics and supply chain work" className="nbd-story-arrow"><ArrowUpRight size={22} /></Link></div>
           </article>
         </div>
 
