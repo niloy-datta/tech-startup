@@ -1,30 +1,51 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { ArrowUpRight, Mail, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Mail, MessageCircle, Sparkles } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { contactEmail } from "@/lib/site";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://niloy-datta.github.io/tech-startup/contact/" }, title: "Contact", description: "Tell NBD about your website, mobile app or custom software project. Start a conversation about your next digital product." };
+  alternates: { canonical: "https://niloy-datta.github.io/tech-startup/contact/" },
+  title: "Contact NBD",
+  description: "Tell NBD about your next website, mobile application, custom software or AI product idea.",
+};
 
 export default function ContactPage() {
   return (
     <>
-      <section className="interior-hero contact-hero"><div className="container"><span className="eyebrow light"><span className="eyebrow-dot" /> LET&apos;S CONNECT</span>
-        <h1>Let&apos;s talk about <em>your big idea.</em></h1>
-        <p>A quick introduction is all it takes. Share what you have in mind and let&apos;s see what we can create together.</p>
-      </div></section>
-      <section className="section contact-section"><div className="container contact-layout">
-        <div className="contact-info">
-          <span className="eyebrow"><span className="eyebrow-dot" /> START A CONVERSATION</span>
-          <h2>Every great product starts <em>somewhere.</em></h2>
-          <p>Have a website in mind? A mobile app idea? A business process that could work better? We&apos;re interested.</p>
-          <div className="contact-way"><div><Mail size={23}/></div><section><strong>Email NBD</strong>{contactEmail ? <a href={`mailto:${contactEmail}`}>{contactEmail} <ArrowUpRight size={15}/></a> : <span>Business email to be announced</span>}</section></div>
-          <div className="contact-way"><div><MessageCircle size={23}/></div><section><strong>Have questions?</strong><span>Tell us the challenge. We&apos;ll explore the possibilities.</span></section></div>
-          <div className="contact-note"><Sparkles size={22}/><p>Not sure about your requirements yet? No problem. We can start with the idea.</p></div>
+      <section className="nd-subhero nd-contact-hero">
+        <div className="container nd-subhero-inner nd-subhero-inner-compact">
+          <span className="nd-eyebrow"><span/> LET&apos;S CONNECT / START A CONVERSATION</span>
+          <h1>Let&apos;s build something<br/><em>remarkable.</em></h1>
+          <p>Whether you have a clear brief or a spark of an idea, we&apos;d love to hear what you&apos;re working on.</p>
         </div>
-        <div className="contact-form-wrap"><div className="form-heading"><span>PROJECT INQUIRY</span><h3>Tell us a little about it.</h3><p>A few details help us understand what you&apos;re looking for.</p></div><Suspense fallback={<p>Loading project form…</p>}><ContactForm /></Suspense></div>
-      </div></section>
+      </section>
+      <section className="nd-contact-section">
+        <div className="container nd-contact-grid">
+          <div className="nd-contact-form-shell">
+            <div className="nd-contact-form-heading"><span className="nd-eyebrow"><span/> PROJECT INQUIRY</span><h2>Tell us about <em>your idea.</em></h2><p>Share a few essentials. We&apos;ll prepare a project enquiry you can review before sending.</p></div>
+            <Suspense fallback={<p>Loading project form…</p>}><ContactForm/></Suspense>
+          </div>
+          <aside className="nd-contact-aside">
+            <div className="nd-contact-info-card">
+              <div className="nd-contact-info-icon"><Mail size={22}/></div>
+              <span>EMAIL</span>
+              {contactEmail ? <a href={`mailto:${contactEmail}`}>{contactEmail} <ArrowUpRight size={16}/></a> : <p>Business email is being configured. You can prepare and copy your inquiry using the form.</p>}
+            </div>
+            <div className="nd-contact-info-card">
+              <div className="nd-contact-info-icon"><MessageCircle size={22}/></div>
+              <span>LET&apos;S CONNECT</span>
+              <p>Tell us about your goals, audience and the challenge you&apos;re solving. We&apos;ll take it from there.</p>
+            </div>
+            <div className="nd-contact-info-card nd-contact-info-accent">
+              <div className="nd-contact-info-icon"><CheckCircle2 size={22}/></div>
+              <span>START WHERE YOU ARE</span>
+              <p>You don&apos;t need a fully finished specification to begin a conversation.</p>
+            </div>
+            <div className="nd-contact-globe" aria-hidden="true"><div className="nd-contact-globe-sphere"/><Sparkles size={30}/></div>
+          </aside>
+        </div>
+      </section>
     </>
   );
 }
