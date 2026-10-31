@@ -16,10 +16,10 @@ export function StudioHero() {
       <div className="nbd-hero-mesh" aria-hidden="true" />
       <div className="container nbd-hero-grid">
         <div className="nbd-hero-copy">
-          <p className="nbd-kicker"><span className="nbd-kicker-dot" /> INDEPENDENT DIGITAL PRODUCT STUDIO <span className="nbd-kicker-star">✳</span> NBD</p>
-          <h1 id="nbd-hero-title">We design<br /><span>what&apos;s next.</span><br />Then build it.</h1>
+          <p className="nbd-kicker"><span className="nbd-kicker-dot" /> AI • SOFTWARE • SAAS • CLOUD • RESEARCH <span className="nbd-kicker-star">✳</span> KADHAVIRA LABS</p>
+          <h1 id="nbd-hero-title">Intelligent ideas.<br /><span>Engineered into reality.</span></h1>
           <p className="nbd-hero-intro">
-            Websites, mobile apps, AI-powered experiences and custom platforms—designed with intention, engineered for real-world use.
+            From AI and research to ambitious SaaS platforms, cloud systems and custom software—we turn complex ideas into useful digital products.
           </p>
           <div className="nbd-hero-buttons">
             <Link href="/contact" className="nbd-primary-button">Start a project <ArrowUpRight size={18} aria-hidden="true" /></Link>
@@ -40,12 +40,12 @@ export function StudioHero() {
           <div className="nbd-product-window">
             <div className="nbd-window-top">
               <div className="nbd-window-dots"><i /><i /><i /></div>
-              <span>NBD / digital product concepts</span>
+              <span>KADHAVIRA LABS / digital product concepts</span>
               <span className="nbd-window-live"><i /> CONCEPT UI</span>
             </div>
             <div className="nbd-window-content">
               <aside className="nbd-window-sidebar" aria-hidden="true">
-                <span className="nbd-window-brand">n<span>.</span></span>
+                <span className="nbd-window-brand">k<span>.</span></span>
                 <span className="nbd-window-icon is-selected"><LayoutDashboard size={17} /></span>
                 <span className="nbd-window-icon"><ChartNoAxesCombined size={17} /></span>
                 <span className="nbd-window-icon"><Layers3 size={17} /></span>
@@ -81,7 +81,7 @@ export function StudioHero() {
 
           <div className="nbd-float-phone" aria-hidden="true">
             <div className="nbd-phone-island" />
-            <div className="nbd-phone-head"><span>n.</span><span>☷</span></div>
+            <div className="nbd-phone-head"><span>k.</span><span>☷</span></div>
             <div className="nbd-phone-overline">TODAY, IN FOCUS</div>
             <strong>Move with<br />clarity.</strong>
             <div className="nbd-phone-orb"><i /><i /><i /></div>
