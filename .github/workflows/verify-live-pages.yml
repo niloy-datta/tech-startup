@@ -1,0 +1,28 @@
+name: Verify NBD GitHub Pages Live Site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-live-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify homepage, services and work pages on GitHub Pages
+        run: node scripts/check-live.mjs
+        env:
+          NBD_SITE_URL: 'https://niloy-datta.github.io/tech-startup/'
+          NBD_LIVE_ATTEMPTS: '18'
+          NBD_LIVE_RETRY_MS: '5000'
