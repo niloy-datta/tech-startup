@@ -5,7 +5,7 @@ import { ProjectShowcase } from "@/components/project-showcase";
 
 export const metadata: Metadata = {
   title: "Our Work & Engineering Projects",
-  description: "Explore NBD team builds and engineering experience across software platforms, mobile applications, AI, developer tools and games.",
+  description: "Explore KADHAVIRA LABS team builds and engineering experience across software platforms, mobile applications, AI, developer tools and games.",
   alternates: { canonical: "https://niloy-datta.github.io/tech-startup/work/" },
 };
 
@@ -17,7 +17,7 @@ export default function WorkPage() {
           <div className="nd-subhero-copy">
             <span className="nd-eyebrow"><span /> WORK / BUILDS / EXPERIMENTS</span>
             <h1>Real projects.<br/><em>Real possibilities.</em></h1>
-            <p>Products we&apos;ve built, ideas we&apos;ve explored and systems we&apos;ve helped shape. Here&apos;s a look inside the NBD workbench.</p>
+            <p>Products we&apos;ve built, ideas we&apos;ve explored and systems we&apos;ve helped shape. Here&apos;s a look inside the KADHAVIRA LABS workbench.</p>
             <div className="nd-subhero-actions">
               <Link className="nd-btn nd-btn-primary" href="#project-catalog">Browse our work <ArrowDownRight size={18}/></Link>
               <Link className="nd-btn nd-btn-outline" href="/contact">Let&apos;s build yours <ArrowUpRight size={18}/></Link>
