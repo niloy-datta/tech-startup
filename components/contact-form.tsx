@@ -26,7 +26,7 @@ export function ContactForm() {
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const body = [
-      "NBD — Project enquiry", "",
+      "KADHAVIRA LABS — Project enquiry", "",
       "Name: " + form.name, "Email: " + form.email,
       "Service: " + (form.service || "To discuss"),
       "Budget: " + (form.budget || "Not decided"),
@@ -36,7 +36,7 @@ export function ContactForm() {
       "", "Project details:", form.message
     ].join("\n");
     if (contactEmail) {
-      window.location.href = "mailto:" + contactEmail + "?subject=" + encodeURIComponent("NBD enquiry — " + (form.service || "New project")) + "&body=" + encodeURIComponent(body);
+      window.location.href = "mailto:" + contactEmail + "?subject=" + encodeURIComponent("KADHAVIRA LABS enquiry — " + (form.service || "New project")) + "&body=" + encodeURIComponent(body);
       setNotice("draft");
       return;
     }
