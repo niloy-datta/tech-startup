@@ -27,7 +27,7 @@ export function StudioPhilosophy() {
     <section className="ae-manifesto" aria-labelledby="ae-manifesto-title" id="why-nbd">
       <div className="container">
         <div className="ae-manifesto-kicker">
-          <span className="ae-eyebrow"><Sparkles size={15} aria-hidden="true" /> THE NBD APPROACH</span>
+          <span className="ae-eyebrow"><Sparkles size={15} aria-hidden="true" /> THE KADHAVIRA LABS APPROACH</span>
           <span className="ae-manifesto-index">PRODUCT THINKING / DESIGN / ENGINEERING</span>
         </div>
         <div className="ae-manifesto-grid">
@@ -50,7 +50,7 @@ export function StudioPhilosophy() {
             ))}
           </div>
         </div>
-        <div className="ae-manifesto-bottom" aria-hidden="true"><span>NBD<sup>®</sup></span><span>GOOD WORK IS INTENTIONAL.</span><span>EST. IN CURIOSITY ✳</span></div>
+        <div className="ae-manifesto-bottom" aria-hidden="true"><span>KADHAVIRA LABS<sup>®</sup></span><span>GOOD WORK IS INTENTIONAL.</span><span>EST. IN CURIOSITY ✳</span></div>
       </div>
     </section>
   );
