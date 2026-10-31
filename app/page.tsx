@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, ChevronRight, Sparkles } from "lucide-react";
 import { StudioHero } from "@/components/studio-hero";
 import { FeaturedStories } from "@/components/featured-stories";
+import { StudioPhilosophy } from "@/components/studio-philosophy";
+import { CapabilityPreview } from "@/components/capability-preview";
 import { ServiceIcon } from "@/components/service-icon";
 import { ProjectPlanner } from "@/components/project-planner";
 import { workSteps, services } from "@/lib/site";
@@ -29,14 +31,14 @@ export default function Home() {
       <section className="section services-section" id="services">
         <div className="container">
           <div className="section-intro split-heading">
-            <div><span className="eyebrow"><span className="eyebrow-dot" /> WHAT WE DO</span><h2>Digital experiences. <em>Thoughtfully engineered.</em></h2></div>
-            <p>Strategy, design and software engineering in one collaborative process. Explore what we can build together.</p>
+            <div><span className="eyebrow"><span className="eyebrow-dot" /> WHAT WE DO</span><h2>Beautiful experiences. <em>Strong engineering.</em></h2></div>
+            <p>From a first website to a full product platform, we make the complex feel clear—without compromising on craft.</p>
           </div>
           <div className="services-grid">
             {services.map((item) => (
               <Link href={`/services#${item.slug}`} className={`service-card service-card-${item.icon}`} key={item.number}>
                 <div className="service-card-top"><span className="service-icon"><ServiceIcon name={item.icon} size={26}/></span><span className="service-num">/ {item.number}</span></div>
-                <div className="service-card-visual" aria-hidden="true"><ServiceIcon name={item.icon} size={116}/></div>
+                <div className="service-card-visual" aria-hidden="true"><CapabilityPreview type={item.icon}/></div>
                 <h3>{item.name}</h3>
                 <p>{item.short}</p>
                 <span className="service-sample">{item.points[0]}</span>
@@ -70,6 +72,8 @@ export default function Home() {
           <div className="atelier-industries-footer"><Link href="/solutions">Explore all solutions <ArrowRight size={18} /></Link></div>
         </div>
       </section>
+
+      <StudioPhilosophy />
 
       <ProjectPlanner />
 
