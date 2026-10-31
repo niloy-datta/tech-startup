@@ -1,6 +1,7 @@
 :HL["/tech-startup/_next/static/chunks/14zr7iok6unb8.css","style"]
+:HL["/tech-startup/_next/static/chunks/1nach56t3kdcr.css","style"]
 :HL["/tech-startup/_next/static/media/07c7676b89ed2778-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/tech-startup/_next/static/media/237858b39a32779d-s.p.2cyn07wtgehh0.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"about","h":96,"c":"$Q2"}]]
-0:{"b":"XX5fl2AbRJO3uSp-Igp0h","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"iaV8LUzeJ_nbjgl8FlGmM","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

@@ -1,4 +1,5 @@
 :HL["/tech-startup/_next/static/chunks/14zr7iok6unb8.css","style"]
+:HL["/tech-startup/_next/static/chunks/1nach56t3kdcr.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"XX5fl2AbRJO3uSp-Igp0h","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"iaV8LUzeJ_nbjgl8FlGmM","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
