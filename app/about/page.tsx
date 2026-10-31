@@ -33,7 +33,7 @@ export default function AboutPage() {
             <div className="nd-about-terminal">
               <div className="nd-terminal-top"><span><i/><i/><i/></span> PRODUCT STUDIO / DESIGN + ENGINEERING <TerminalSquare size={15}/></div>
               <div className="nd-terminal-content">
-                <span className="nd-terminal-comment">// Thoughtful technology starts with people.</span>
+                <span className="nd-terminal-comment">{"// Thoughtful technology starts with people."}</span>
                 <span><b>const</b> nbd = {"{"}</span>
                 <span className="nd-code-indent">vision: <em>&quot;Build with purpose&quot;</em>,</span>
                 <span className="nd-code-indent">principles: [</span>
