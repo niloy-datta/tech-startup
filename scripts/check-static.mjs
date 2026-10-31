@@ -23,7 +23,7 @@ const homepage = read("index.html");
 assert.match(homepage, /KADHAVIRA/, "Kadhavira brand wordmark is missing");
 assert.match(homepage, /AI.*SOFTWARE.*SAAS.*CLOUD.*RESEARCH/s, "Brand capabilities missing");
 assert.match(homepage, /AgriLume AI/, "Featured project missing from homepage");
-assert.match(homepage, /href="\/tech-startup\/labs\/?"/, "Labs navigation is missing");
+assert.match(homepage, /href="\/(?:tech-startup\/)?labs\/"/, "Labs navigation is missing");
 assert.match(homepage, /kl-home-bridge/, "Labs homepage introduction missing");
 assert.doesNotMatch(homepage, />NBD</, "Old NBD wordmark is still visible");
 
