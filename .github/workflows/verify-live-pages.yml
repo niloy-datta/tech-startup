@@ -1,4 +1,4 @@
-name: Verify NBD GitHub Pages Live Site
+name: Verify Kadhavira Labs GitHub Pages Live Site
 
 on:
   push:
@@ -20,9 +20,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Verify homepage, services and work pages on GitHub Pages
+      - name: Verify Kadhavira Labs pages on GitHub Pages
         run: node scripts/check-live.mjs
         env:
-          NBD_SITE_URL: 'https://niloy-datta.github.io/tech-startup/'
-          NBD_LIVE_ATTEMPTS: '18'
-          NBD_LIVE_RETRY_MS: '5000'
+          KADHAVIRA_SITE_URL: 'https://niloy-datta.github.io/tech-startup/'
+          KADHAVIRA_LIVE_ATTEMPTS: '18'
+          KADHAVIRA_LIVE_RETRY_MS: '5000'
