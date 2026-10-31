@@ -17,18 +17,17 @@ export function StudioHero() {
       <div className="container nbd-hero-grid">
         <div className="nbd-hero-copy">
           <p className="nbd-kicker"><span className="nbd-kicker-dot" /> INDEPENDENT DIGITAL PRODUCT STUDIO <span className="nbd-kicker-star">✳</span> NBD</p>
-          <h1 id="nbd-hero-title">We build<br />what <span>comes<br className="nbd-hero-break" /> next.</span></h1>
+          <h1 id="nbd-hero-title">We design<br /><span>what&apos;s next.</span><br />Then build it.</h1>
           <p className="nbd-hero-intro">
-            Thoughtful websites. Powerful apps. Intelligent software.
-            We design and engineer digital products that make your business impossible to overlook.
+            Websites, mobile apps, AI-powered experiences and custom platforms—designed with intention, engineered for real-world use.
           </p>
           <div className="nbd-hero-buttons">
             <Link href="/contact" className="nbd-primary-button">Start a project <ArrowUpRight size={18} aria-hidden="true" /></Link>
             <Link href="/#featured-work" className="nbd-text-button">Explore our work <ArrowRight size={18} aria-hidden="true" /></Link>
           </div>
           <div className="nbd-hero-proof" aria-label="Our capabilities">
-            <span><strong>01</strong> Product strategy</span>
-            <span><strong>02</strong> Human-centered design</span>
+            <span><strong>01</strong> Product thinking</span>
+            <span><strong>02</strong> Experience design</span>
             <span><strong>03</strong> Modern engineering</span>
           </div>
         </div>
@@ -36,12 +35,12 @@ export function StudioHero() {
         <div className="nbd-stage" aria-label="Illustrative examples of digital product interfaces, not actual client analytics">
           <div className="nbd-stage-orbit nbd-stage-orbit-one" aria-hidden="true" />
           <div className="nbd-stage-orbit nbd-stage-orbit-two" aria-hidden="true" />
-          <div className="nbd-stage-label nbd-stage-label-top"><Sparkles size={13} /> IDEAS INTO INTERFACES</div>
+          <div className="nbd-stage-label nbd-stage-label-top"><Sparkles size={13} /> DESIGN × ENGINEERING</div>
 
           <div className="nbd-product-window">
             <div className="nbd-window-top">
               <div className="nbd-window-dots"><i /><i /><i /></div>
-              <span>studio.nbd / product concept</span>
+              <span>NBD / digital product concepts</span>
               <span className="nbd-window-live"><i /> CONCEPT UI</span>
             </div>
             <div className="nbd-window-content">
@@ -95,7 +94,7 @@ export function StudioHero() {
       </div>
       <div className="container nbd-hero-bottom">
         <span><ArrowDownRight size={16} aria-hidden="true" /> SCROLL TO EXPLORE</span>
-        <span>STRATEGY <i /> DESIGN <i /> DEVELOPMENT</span>
+        <Link href="/work" className="nbd-hero-work-link">SEE REAL PROJECTS <ArrowUpRight size={17} aria-hidden="true" /></Link>
       </div>
     </section>
   );
