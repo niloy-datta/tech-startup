@@ -17,7 +17,7 @@ export function ProjectPlanner() {
   const contactQuery = new URLSearchParams({ product, stage, priority }).toString();
 
   const brief = [
-    "NBD — Project starter brief",
+    "KADHAVIRA LABS — Project starter brief",
     "Project: " + product,
     "Current stage: " + stage,
     "Top priority: " + priority,
