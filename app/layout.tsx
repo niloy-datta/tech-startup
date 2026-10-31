@@ -11,29 +11,30 @@ import "./studio-2026.css";
 import "./nav-experience.css";
 import "./nav-art.css";
 import "./atelier-evolution.css";
+import "./kadhavira-brand.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 
 const canonical = "https://niloy-datta.github.io/tech-startup/";
-const organization = { "@context": "https://schema.org", "@type": "Organization", name: "NBD", url: canonical, description: "Websites, mobile apps and custom business software." };
+const organization = { "@context": "https://schema.org", "@type": "Organization", name: "KADHAVIRA LABS", url: canonical, description: "AI, software, SaaS, cloud engineering and research-led product development.", knowsAbout: ["Artificial intelligence", "Software engineering", "SaaS", "Cloud computing", "Applied research"] };
 
 export const metadata: Metadata = {
   metadataBase: new URL(canonical),
   alternates: { canonical },
-  title: { default: "NBD — Websites, Apps & Digital Solutions", template: "%s | NBD" },
-  description: "NBD helps ambitious businesses bring websites, mobile apps, custom software and digital products to life. Discover, design, develop and evolve.",
-  applicationName: "NBD",
-  keywords: ["NBD", "web development", "mobile app development", "software development", "UI/UX design", "AI integration"],
+  title: { default: "KADHAVIRA LABS — AI • Software • SaaS • Cloud • Research", template: "%s | KADHAVIRA LABS" },
+  description: "KADHAVIRA LABS explores and engineers applied AI, custom software, SaaS products, cloud systems and research-driven digital experiences.",
+  applicationName: "KADHAVIRA LABS",
+  keywords: ["KADHAVIRA LABS", "AI product engineering", "software development", "SaaS platforms", "cloud systems", "research and development", "web development", "mobile app development", "UI UX design"],
   openGraph: {
     type: "website",
-    title: "NBD — Websites, Apps & Digital Solutions",
-    description: "Your next digital move starts here. Website development, mobile apps and thoughtful software solutions.",
-    siteName: "NBD",
+    title: "KADHAVIRA LABS — AI, Software, SaaS, Cloud & Research",
+    description: "AI-powered digital products, custom software, SaaS, cloud and research-led engineering.",
+    siteName: "KADHAVIRA LABS",
     url: canonical,
   },
   robots: { index: true, follow: true },
-  twitter: { card: "summary", title: "NBD — Websites, Apps & Digital Solutions" },
+  twitter: { card: "summary", title: "KADHAVIRA LABS — AI • Software • SaaS • Cloud • Research" },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#090b12" };
