@@ -6,8 +6,8 @@ import { contactEmail } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://niloy-datta.github.io/tech-startup/contact/" },
-  title: "Contact NBD",
-  description: "Tell NBD about your next website, mobile application, custom software or AI product idea.",
+  title: "Contact KADHAVIRA LABS",
+  description: "Tell KADHAVIRA LABS about your next website, mobile application, custom software or AI product idea.",
 };
 
 export default function ContactPage() {
