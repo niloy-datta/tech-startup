@@ -8,6 +8,7 @@ import {
   Sprout, Terminal, Truck, Users, Wallet,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { ProjectArtwork } from "@/components/project-artwork";
 import {
   portfolioProjects, projectCategories,
   type PortfolioProject, type ProjectVisual, type ProjectCategory,
@@ -35,8 +36,8 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
   const Icon = visualIcons[project.visual];
 
   return (
-    <article className="portfolio-card">
-      <div className={`portfolio-art portfolio-art--${project.visual}`} aria-hidden="true">
+    <article className={`portfolio-card nd-project-${project.visual}`}>
+      {(["agriculture", "space", "finance", "logistics"] as ProjectVisual[]).includes(project.visual) ? <ProjectArtwork visual={project.visual} /> : <div className={`portfolio-art portfolio-art--${project.visual}`} aria-hidden="true">
         <div className="portfolio-art-light" />
         <div className="portfolio-art-header">
           <span>PRODUCT / {String(index + 1).padStart(2, "0")}</span>
@@ -53,7 +54,7 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
           </div>
         </div>
         <span className="portfolio-art-caption">ILLUSTRATIVE VISUAL</span>
-      </div>
+      </div>}
       <div className="portfolio-card-body">
         <div className="portfolio-card-topline"><span>{project.category}</span><span>{project.kind}</span></div>
         <h3>{project.name}</h3>
@@ -90,9 +91,9 @@ export function ProjectShowcase({ mode = "featured" }: { mode?: "featured" | "al
       <div className="container">
         <div className="portfolio-section-header">
           <div>
-            <span className="eyebrow"><span className="eyebrow-dot" /> {isFeatured ? "FROM THE TEAM'S WORKBENCH" : "EXPLORE OUR ENGINEERING PRACTICE"}</span>
+            <span className="eyebrow"><span className="eyebrow-dot" /> {isFeatured ? "FROM THE TEAM'S WORKBENCH" : "SELECTED BUILDS / EXPERIMENTS"}</span>
             <h2 id="portfolio-heading">
-              {isFeatured ? <>Ideas made <em>tangible.</em></> : <>Built across <em>disciplines.</em></>}
+              {isFeatured ? <>Ideas made <em>tangible.</em></> : <>Real projects. <em>Real possibilities.</em></>}
             </h2>
           </div>
           <p>
@@ -118,7 +119,7 @@ export function ProjectShowcase({ mode = "featured" }: { mode?: "featured" | "al
           {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
         </div>
         <p className="portfolio-disclaimer">
-          <strong>A note on attribution:</strong> This gallery includes learning projects, personal/team builds, prototypes and prior industry engineering experience. They are not all commissioned NBD client projects. Illustrations are design artwork, not screenshots or performance claims.
+          <strong>About this collection:</strong> This gallery includes learning projects, personal/team builds, prototypes and prior industry engineering experience. They are not all commissioned NBD client projects. Illustrations are design artwork, not screenshots or performance claims.
         </p>
         <div className="portfolio-after">
           <div>
