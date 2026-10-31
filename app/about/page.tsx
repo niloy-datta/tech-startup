@@ -4,8 +4,8 @@ import { ArrowRight, ArrowUpRight, CheckCircle2, Code2, Compass, HeartHandshake,
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://niloy-datta.github.io/tech-startup/about/" },
-  title: "About NBD",
-  description: "Meet the people and thinking behind NBD: design-led digital product development backed by engineering and meaningful collaboration.",
+  title: "About KADHAVIRA LABS",
+  description: "Meet the people and thinking behind KADHAVIRA LABS: design-led digital product development backed by engineering and meaningful collaboration.",
 };
 
 const values = [
@@ -20,7 +20,7 @@ export default function AboutPage() {
     <>
       <section className="nd-subhero nd-about-hero">
         <div className="container nd-subhero-inner nd-subhero-inner-compact">
-          <span className="nd-eyebrow"><span/> ABOUT NBD / THE PEOPLE BEHIND THE PRODUCTS</span>
+          <span className="nd-eyebrow"><span/> ABOUT KADHAVIRA LABS / THE PEOPLE BEHIND THE PRODUCTS</span>
           <h1>A small studio.<br/><em>A bigger ambition.</em></h1>
           <p>We believe thoughtful design, solid engineering and close collaboration can turn ambitious ideas into useful digital products.</p>
           <Link href="/contact" className="nd-btn nd-btn-primary">Meet us through a project <ArrowUpRight size={18}/></Link>
@@ -47,7 +47,7 @@ export default function AboutPage() {
             <div className="nd-about-scene-chip"><Sparkles size={17}/> Made with intention</div>
           </div>
           <div className="nd-about-story-copy">
-            <span className="nd-eyebrow"><span/> THE THINKING BEHIND NBD</span>
+            <span className="nd-eyebrow"><span/> THE THINKING BEHIND KADHAVIRA LABS</span>
             <h2>Curious minds.<br/><em>Purposeful work.</em></h2>
             <p className="nd-about-lead">We&apos;re an independent digital product studio with a passion for turning complex ideas into intuitive experiences.</p>
             <p>Our work connects product strategy, design and software engineering. From early prototypes to useful business platforms, we start by understanding the problem and the people who need the solution.</p>
