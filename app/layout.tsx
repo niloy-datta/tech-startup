@@ -7,6 +7,7 @@ import "./upgrade.css";
 import "./next-wave.css";
 import "./atelier.css";
 import "./projects.css";
+import "./studio-2026.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
