@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://niloy-datta.github.io/tech-startup/sitemap.xml
