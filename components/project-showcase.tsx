@@ -36,7 +36,7 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
   const Icon = visualIcons[project.visual];
 
   return (
-    <article className={`portfolio-card nd-project-${project.visual}`}>
+    <article id={`project-${project.id}`} className={`portfolio-card nd-project-${project.visual}`}>
       {(["agriculture", "space", "finance", "logistics"] as ProjectVisual[]).includes(project.visual) ? <ProjectArtwork visual={project.visual} /> : <div className={`portfolio-art portfolio-art--${project.visual}`} aria-hidden="true">
         <div className="portfolio-art-light" />
         <div className="portfolio-art-header">
@@ -69,7 +69,7 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
               <span className="sr-only">(opens in a new tab)</span>
             </a>
           ) : (
-            <span className="portfolio-card-note">More details on request</span>
+            <Link href="/contact?product=Still%20exploring" className="portfolio-card-link">Ask about a similar build <ArrowUpRight size={18} aria-hidden="true" /></Link>
           )}
           <span className="portfolio-card-index">{String(index + 1).padStart(2, "0")} /</span>
         </div>
