@@ -7,7 +7,7 @@ import { services } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Explore NBD's website development, mobile applications, custom software, UI/UX, AI and digital product support services.",
+  description: "Explore KADHAVIRA LABS's website development, mobile applications, custom software, UI/UX, AI and digital product support services.",
   alternates: { canonical: "https://niloy-datta.github.io/tech-startup/services/" },
 };
 
@@ -23,7 +23,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="nd-service-section" aria-label="NBD services">
+      <section className="nd-service-section" aria-label="KADHAVIRA LABS services">
         <div className="container">
           <div className="nd-service-grid">
             {services.map((service,index) => (
