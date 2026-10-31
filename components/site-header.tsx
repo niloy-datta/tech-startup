@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { mainNav } from "@/lib/site";
+import { BrandMark } from "@/components/brand-mark";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -20,9 +21,8 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container nav-bar">
-        <Link href="/" className="brand" aria-label="NBD home" onClick={() => setOpen(false)}>
-          <span className="brand-symbol" aria-hidden="true"><span /><span /><span /></span>
-          <span>NBD<span className="brand-period">.</span></span>
+        <Link href="/" className="brand" aria-label="Kadhavira Labs home" onClick={() => setOpen(false)}>
+          <BrandMark />
         </Link>
         <nav className={open ? "nav-links is-open" : "nav-links"} aria-label="Main navigation" id="site-nav">
           {mainNav.map((item) => (
