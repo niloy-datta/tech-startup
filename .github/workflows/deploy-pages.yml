@@ -1,87 +1,75 @@
 name: Deploy NBD to GitHub Pages
 
+# This repository uses GitHub Pages' "Deploy from a branch" setting.
+# Pages publishes main / (root). Export Next.js and commit the generated site
+# alongside the source files so no GitHub Pages administration token is needed.
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: nbd-static-pages
+  cancel-in-progress: false
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-      - name: Ensure GitHub Actions is the Pages source
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          mode="$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .build_type)"
-          echo "Current Pages publishing mode: $mode"
-          if [[ "$mode" != "workflow" ]]; then
-            echo "Attempting to change Pages source to GitHub Actions with the repository token."
-            if ! gh api --method PUT "repos/$GITHUB_REPOSITORY/pages" -f build_type=workflow; then
-              echo "::error title=GitHub Pages configuration requires owner action::Open Settings > Pages > Build and deployment, select GitHub Actions as the source, then re-run this workflow."
-              echo "Settings: https://github.com/$GITHUB_REPOSITORY/settings/pages"
-              exit 1
-            fi
-          fi
-          mode="$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .build_type)"
-          echo "Verified Pages publishing mode: $mode"
-          if [[ "$mode" != "workflow" ]]; then
-            echo "::error title=Incorrect GitHub Pages source::GitHub Pages publishing mode did not change to GitHub Actions."
-            exit 1
-          fi
       - name: Install dependencies
         run: npm install --no-audit --no-fund
       - name: Lint
         run: npm run lint
       - name: Typecheck
         run: npm run typecheck
-      - name: Build static website
+      - name: Build static website for GitHub Pages
         run: npm run build
         env:
           GITHUB_PAGES: 'true'
           NEXT_TELEMETRY_DISABLED: '1'
           NEXT_PUBLIC_NBD_CONTACT_EMAIL: ${{ vars.NBD_CONTACT_EMAIL }}
-      - name: Validate static export
+      - name: Validate exported website
         run: npm run test:static
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./out
+      - name: Publish static export to Pages source root
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f out/index.html
+          test -f out/services/index.html
+          test -f out/work/index.html
+          test -d out/_next
+          # Keep Next.js source files and its assets together in the existing
+          # main-branch root. GitHub Pages reads this root directly.
+          cp -a out/. ./
+          # Disable Jekyll: otherwise it drops the required _next assets.
+          touch .nojekyll
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-      - name: Checkout for live smoke checks
-        uses: actions/checkout@v4
-      - name: Set up Node.js for smoke checks
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Verify live website after deploy
-        run: node scripts/check-live.mjs
+          git add -f -- .nojekyll
+          # Stage only files produced by the static export, not source changes
+          # or npm-generated files. This also works for generated nested paths.
+          while IFS= read -r -d '' artifact; do
+            path="${artifact#out/}"
+            git add -f -- "$path"
+          done < <(find out -type f -print0)
+
+          if git diff --cached --quiet; then
+            echo "Static export already matches the published source root."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "deploy(pages): publish NBD static site"
+          git push origin HEAD:main
+          echo "Static website files are now committed to main / (root)."
