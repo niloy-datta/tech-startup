@@ -6,7 +6,7 @@ import { SolutionPreview } from "@/components/capability-preview";
 
 export const metadata: Metadata = {
   title: "Digital Solutions & Product Ideas",
-  description: "Explore practical NBD product directions for SaaS, e-commerce, operations, AI, mobile applications and internal business portals.",
+  description: "Explore practical KADHAVIRA LABS product directions for SaaS, e-commerce, operations, AI, mobile applications and internal business portals.",
   alternates: { canonical: "https://niloy-datta.github.io/tech-startup/solutions/" },
 };
 
@@ -20,7 +20,7 @@ export default function SolutionsPage() {
         <div className="container nd-subhero-inner nd-subhero-inner-compact">
           <span className="nd-eyebrow"><span/> INDUSTRIES / PRODUCT OPPORTUNITIES</span>
           <h1>Industry-focused<br/><em>digital solutions.</em></h1>
-          <p>Useful software begins with a clear challenge. Explore six ways NBD can help turn complex business needs into purposeful digital experiences.</p>
+          <p>Useful software begins with a clear challenge. Explore six ways KADHAVIRA LABS can help turn complex business needs into purposeful digital experiences.</p>
           <Link href="/contact" className="nd-btn nd-btn-primary">Discuss your challenge <ArrowUpRight size={18}/></Link>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default function SolutionsPage() {
           <Link href="/#process" className="nd-btn nd-btn-outline">See our approach <ArrowRight size={18}/></Link>
         </div>
       </section>
-      <section className="nd-end-cta"><div className="container nd-end-cta-inner"><div><span>LET&apos;S FIND YOUR DIRECTION</span><h2>Different challenge?<br/><em>We&apos;re listening.</em></h2></div><Link href="/contact" className="nd-btn nd-btn-primary">Talk to NBD <ArrowUpRight size={18}/></Link></div></section>
+      <section className="nd-end-cta"><div className="container nd-end-cta-inner"><div><span>LET&apos;S FIND YOUR DIRECTION</span><h2>Different challenge?<br/><em>We&apos;re listening.</em></h2></div><Link href="/contact" className="nd-btn nd-btn-primary">Talk to KADHAVIRA LABS <ArrowUpRight size={18}/></Link></div></section>
     </>
   );
 }
