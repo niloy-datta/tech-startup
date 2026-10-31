@@ -1,18 +1,40 @@
-# NBD — Company Profile Website
+# KADHAVIRA LABS — AI • Software • SaaS • Cloud • Research
 
-An English-language company profile for **NBD**, focused on website development, mobile app development, custom software, UX/UI and AI integration.
+A responsive company profile and digital engineering showcase for **KADHAVIRA LABS**. The website presents five practice areas, software development services, team-built projects and honest project enquiry tools.
 
-## Tech
+> **Brand status:** KADHAVIRA LABS is the working brand requested for the website. This repository does not establish company incorporation, domain ownership, trademark registration, certifications, revenue, published research or client contracts. Verify legal/name availability before commercial registration.
 
-- Next.js 16 App Router + React 19
-- TypeScript (strict)
-- Plain CSS, responsive and accessible layouts
-- Lucide icons
-- No database or paid API required for the brochure site
+## Production website
 
-## Run locally
+**https://niloy-datta.github.io/tech-startup/**
 
-Requires Node.js 22+.
+The repository remains `niloy-datta/tech-startup` and deploys on **GitHub Pages only**. The old repository slug is a hosting path, not the company name. If you later acquire a verified business domain, update `metadataBase`, canonicals, sitemap, robots, and GitHub Pages domain settings together.
+
+## Tech stack
+
+- Next.js 16 App Router + React 19, strict TypeScript.
+- Responsive CSS and Lucide icons; no purchased design system.
+- Next.js static export to `out/` with `GITHUB_PAGES=true` and `basePath="/tech-startup"`.
+- GitHub Actions and GitHub Pages; no Vercel or external backend dependency.
+
+## Pages
+
+| Route | Purpose |
+| --- | --- |
+| `/` | Hero, selected work, services, five-practice teaser, project planner, process, FAQs and CTA |
+| `/labs/` | AI, Software, SaaS, Cloud and Research practice areas and engineering approach |
+| `/work/` | Honest team builds, prototypes and engineering experience with filtering |
+| `/services/` | Web, mobile, custom software, UI/UX, AI integration and support |
+| `/solutions/` | Industry-facing solution ideas: SaaS, commerce, logistics, mobile, AI and internal tools |
+| `/about/` | Studio philosophy and principles |
+| `/contact/` | User-friendly project enquiry and contact information |
+| `/privacy/` | Privacy explanation for this static site |
+
+Product visuals are illustrative UI concepts. Team builds and research explorations are not presented as commissioned KADHAVIRA LABS client work or verified research results.
+
+## Local development
+
+Requires Node.js 22+ and npm.
 
 ```bash
 npm install
@@ -20,74 +42,41 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open http://localhost:3000
+On Windows PowerShell: `Copy-Item .env.example .env.local`. Visit `http://localhost:3000/` after `npm run dev`.
 
-On Windows PowerShell, use `Copy-Item .env.example .env.local` instead of `cp` if needed.
+## Set up the public contact address
 
-To verify the project:
+Set only a **verified business inbox** in `.env.local` (the address is intentionally not invented):
+
+```env
+NEXT_PUBLIC_KADHAVIRA_CONTACT_EMAIL=your-confirmed-business-email@example.com
+```
+
+For GitHub Pages, create a repository **Actions variable** `KADHAVIRA_CONTACT_EMAIL` in [Settings → Secrets and variables → Actions](https://github.com/niloy-datta/tech-startup/settings/variables/actions) and rerun the deployment workflow. The previous `NBD_CONTACT_EMAIL` is accepted temporarily as a backwards-compatible fallback; migrate to the new variable.
+
+**The form does not submit to a server.** When a verified address is configured, submitting opens an email **draft** in the visitor's email application. The visitor must still send it. When no address is configured, the form copies or displays a project brief for manual use; no message is delivered. A production server-side inbox requires a separate hosted service, anti-spam measures and explicit consent.
+
+## Build, test and publish
 
 ```bash
 npm run lint
 npm run typecheck
 npm run build
+npm run test:static
 ```
 
-## Contact setup — required before launch
+`GITHUB_PAGES=true npm run build` produces the GitHub Pages export with the `/tech-startup` prefix.
 
-Set your confirmed business inbox in `.env.local` (or your hosting provider's environment settings):
+The [GitHub Pages publishing workflow](.github/workflows/deploy-pages.yml) runs lint, TypeScript, build and static checks on `main`, then copies generated files into the existing `main / (root)` Pages source and commits them through GitHub Actions. `.nojekyll` preserves the `_next` asset folder. This branch-publishing workaround is intentional because the connected GitHub App cannot edit Pages settings. The [CI workflow](.github/workflows/ci.yml) runs independently. Use [GitHub Actions](https://github.com/niloy-datta/tech-startup/actions) to review deploy results.
 
-```env
-NEXT_PUBLIC_NBD_CONTACT_EMAIL=your-confirmed-business-email@example.com
-```
+[Live route smoke checks](.github/workflows/verify-live-pages.yml) cover the homepage and all seven interior routes. Static tests verify the brand, five practice areas, links, SEO output and exported pages. The GitHub Pages publishing source should remain `main` / `(root)` unless the deployment workflow is changed.
 
-**The project inquiry form is intentionally honest about its behavior:** it validates fields, then opens a pre-filled **email draft** in the visitor's email client; it does **not** claim to save, send or deliver messages from the website. If no email is set, the form is disabled and tells visitors the inbox is not configured. If you want server-side delivery later, configure a verified mail domain, protected API endpoint, abuse safeguards and an email service.
+## Important before marketing
 
-## Pages
+1. Confirm the brand/trademark and complete any required business registration.
+2. Configure a real contact email and test it on the public site.
+3. Replace illustrative portfolio interfaces with real authorized screenshots where available, maintaining honest project descriptions.
+4. Secure the company's official domain and update site URLs after ownership is confirmed.
+5. Verify the final UI visually on desktop, tablet and mobile browsers.
 
-- `/`: homepage, illustrative dashboard concept, services, possibilities, process, FAQ and CTAs
-- `/services`: detailed capabilities
-- `/about`: company profile, principles and direction
-- `/contact`: inquiry/email draft
-- `/privacy`: current implementation privacy note
-
-No client logos, testimonials, company registration claims or sales statistics are fabricated. Artwork represents **concept UI**, not commissioned projects.
-
-## Deployment
-
-Deploy the repository on Vercel or any Node.js 22+ environment supporting Next.js. Set `NEXT_PUBLIC_NBD_CONTACT_EMAIL` in deployment environment and rebuild. Add your official company domain when it is ready. Update site metadata and privacy content as the business and its integrations develop.
-
-## Quality
-
-GitHub Actions runs lint, TypeScript checks and a production build on pushes/PRs to `main`. Create and commit `package-lock.json` after your first `npm install` so the project can switch to deterministic `npm ci`.
-
-## Note
-
-NBD is the approved working brand. The site's offerings are descriptions of services, not claims of completed customer work. Replace all contact placeholders with verified NBD details before marketing to clients.
-
-## GitHub Pages deployment
-
-This site is designed to publish automatically from the `main` branch via the workflow in `.github/workflows/deploy-pages.yml`.
-
-**First-time GitHub repository setting:**
-
-1. Visit [Repository Settings → Pages](https://github.com/niloy-datta/tech-startup/settings/pages).
-2. Under **Build and deployment → Source**, select **GitHub Actions** (not "Deploy from a branch").
-3. Open [Actions → Deploy NBD to GitHub Pages](https://github.com/niloy-datta/tech-startup/actions/workflows/deploy-pages.yml), and, if needed, choose **Run workflow** on `main`.
-4. Once the workflow succeeds, visit **https://niloy-datta.github.io/tech-startup/**.
-
-Builds made for GitHub Pages set `GITHUB_PAGES=true`, so Next.js automatically adds the `/tech-startup` base path. Local `npm run dev` continues to work at `http://localhost:3000/`. `npm run build` writes static files to `out/`.
-
-### Configure the public email without putting it in source
-
-In [GitHub → Settings → Secrets and variables → Actions → Variables](https://github.com/niloy-datta/tech-startup/settings/variables/actions), create a **repository variable** named `NBD_CONTACT_EMAIL` with the confirmed NBD business email address; then rerun the Pages workflow. It is used only as a public build-time contact destination.
-
-Because this is static hosting, the contact form **opens an email draft**; it does not submit to a backend. Static GitHub Pages does not support Next.js API routes or server-side actions.
-
-## NBD experience and release checks
-
-- Main service pages: website development, mobile applications, custom software, product design, AI workflows and support.
-- [Solutions](/solutions): illustrative commerce, operations, SaaS, mobile and automation concepts. These are **not** claimed client projects.
-- The homepage Project Starter preserves chosen product, stage and priority in the Contact page URL.
-- Contact forms open an email draft only when `NEXT_PUBLIC_NBD_CONTACT_EMAIL` is set; otherwise they offer **copy enquiry**. They do not submit to a backend.
-- GitHub Pages exports a sitemap and robots file at `/tech-startup/sitemap.xml` and `/tech-startup/robots.txt`.
-- Run `npm run lint && npm run typecheck && npm run build && npm run test:static` to validate a local static export. GitHub Actions runs these checks before publishing.
+No fabricated customer metrics, client logos, testimonials, company certificates or claims of registered intellectual property are included.
