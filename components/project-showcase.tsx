@@ -97,7 +97,7 @@ export function ProjectShowcase({ mode = "featured" }: { mode?: "featured" | "al
             </h2>
           </div>
           <p>
-            A selection of products, prototypes and industry experience contributed to or explored by the people behind NBD—from apps and AI to developer tools, games and business systems.
+            A selection of products, prototypes and industry experience contributed to or explored by the people behind KADHAVIRA LABS—from apps and AI to developer tools, games and business systems.
           </p>
         </div>
         {!isFeatured && (
@@ -119,7 +119,7 @@ export function ProjectShowcase({ mode = "featured" }: { mode?: "featured" | "al
           {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
         </div>
         <p className="portfolio-disclaimer">
-          <strong>About this collection:</strong> This gallery includes learning projects, personal/team builds, prototypes and prior industry engineering experience. They are not all commissioned NBD client projects. Illustrations are design artwork, not screenshots or performance claims.
+          <strong>About this collection:</strong> This gallery includes learning projects, personal/team builds, prototypes and prior industry engineering experience. They are not all commissioned KADHAVIRA LABS client projects. Illustrations are design artwork, not screenshots or performance claims.
         </p>
         <div className="portfolio-after">
           <div>
