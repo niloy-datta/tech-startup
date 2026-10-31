@@ -1,56 +1,64 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Sparkles } from "lucide-react";
 import { ServiceIcon } from "@/components/service-icon";
+import { CapabilityPreview } from "@/components/capability-preview";
 import { services } from "@/lib/site";
-import { ProjectShowcase } from "@/components/project-showcase";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Explore NBD services and selected engineering projects across web, mobile, AI, developer tools, games and business systems.",
+  description: "Explore NBD's website development, mobile applications, custom software, UI/UX, AI and digital product support services.",
+  alternates: { canonical: "https://niloy-datta.github.io/tech-startup/services/" },
 };
 
 export default function ServicesPage() {
   return (
     <>
-      <section className="interior-hero">
-        <div className="container"><span className="eyebrow light"><span className="eyebrow-dot" /> OUR EXPERTISE</span>
-          <h1>Solutions made for <em>your next move.</em></h1>
-          <p>From websites and mobile apps to AI, games and business systems, our approach draws on the products and problems our team has explored.</p>
+      <section className="nd-subhero nd-services-hero">
+        <div className="container nd-subhero-inner nd-subhero-inner-compact">
+          <span className="nd-eyebrow"><span/> OUR EXPERTISE / SIX CORE SERVICES</span>
+          <h1>Everything you need<br/>to build <em>what&apos;s next.</em></h1>
+          <p>From idea to launch and beyond, we bring product thinking, design and engineering together to build things people love using.</p>
+          <Link href="/contact" className="nd-btn nd-btn-primary">Let&apos;s talk about your project <ArrowUpRight size={18}/></Link>
         </div>
       </section>
-      <section className="section service-details-section"><div className="container">
-        <div className="section-intro"><span className="eyebrow"><span className="eyebrow-dot" /> WHAT WE CAN BUILD</span><h2>Expertise that <em>connects the dots.</em></h2></div>
-        <div className="service-details">
-          {services.map((service) => (
-            <article className="service-detail" id={service.slug} key={service.slug}>
-              <div className="detail-icon"><ServiceIcon name={service.icon} size={32}/></div>
-              <div className="detail-copy">
-                <span className="detail-number">SERVICE / {service.number}</span><h3>{service.name}</h3><p>{service.details}</p>
-                <ul>{service.points.map((point) => <li key={point}><Check size={17}/>{point}</li>)}</ul>
-              </div>
-              <Link href={`/contact?product=${encodeURIComponent(service.name === "Website development" ? "Website" : service.name === "Mobile app development" ? "Mobile app" : service.name === "Custom software" ? "Custom platform" : "Still exploring")}`} className="detail-link" aria-label={`Discuss ${service.name}`}><ArrowUpRight size={25}/></Link>
-            </article>
-          ))}
-        </div>
-      </div></section>
 
-      <ProjectShowcase mode="featured" />
-
-      <section className="section deliverables-section">
+      <section className="nd-service-section" aria-label="NBD services">
         <div className="container">
-          <div className="section-intro split-heading"><div><span className="eyebrow"><span className="eyebrow-dot"/> WHAT GOOD DELIVERY CONSIDERS</span><h2>Not just the launch. <em>The whole experience.</em></h2></div><p>We agree the exact deliverables with each client. Our approach considers the important foundations before and after release.</p></div>
-          <div className="deliverables-grid">
-            <article><span>01</span><h3>Clarity first</h3><p>Requirements, audiences, product priorities and milestones.</p></article>
-            <article><span>02</span><h3>Designed for people</h3><p>Clear journeys, responsive layouts and accessible interactions.</p></article>
-            <article><span>03</span><h3>Engineered with care</h3><p>Maintainable code, sensible architecture and performance-minded decisions.</p></article>
-            <article><span>04</span><h3>Ready for what&apos;s next</h3><p>Testing, documentation and an agreed plan for future improvements.</p></article>
+          <div className="nd-service-grid">
+            {services.map((service,index) => (
+              <article className="nd-service-card" id={service.slug} key={service.slug}>
+                <div className="nd-service-card-head">
+                  <div className="nd-service-icon"><ServiceIcon name={service.icon} size={25}/></div>
+                  <span>{service.number} / 06</span>
+                </div>
+                <div className="nd-service-art-wrap"><CapabilityPreview type={service.icon}/></div>
+                <div className="nd-service-card-copy">
+                  <h2>{service.name}</h2>
+                  <p>{service.details}</p>
+                  <ul>{service.points.map(point => <li key={point}><Check size={15}/>{point}</li>)}</ul>
+                  <Link href={`/contact?product=${encodeURIComponent(service.name === "Website development" ? "Website" : service.name === "Mobile app development" ? "Mobile app" : service.name === "Custom software" ? "Custom platform" : "Still exploring")}`} className="nd-service-link">Discuss this service <ArrowUpRight size={18}/></Link>
+                </div>
+                <span className="nd-service-card-index" aria-hidden="true">0{index+1}</span>
+              </article>
+            ))}
           </div>
-          <p className="delivery-footnote">Specific testing, deliverables and support are defined in the scope of each engagement.</p>
         </div>
       </section>
 
-      <section className="mini-cta"><div className="container"><div><span>YOUR IDEA DESERVES A PLAN</span><h2>Not sure where to start?</h2></div><Link href="/contact" className="btn btn-lime">Let&apos;s figure it out <ArrowRight size={18}/></Link></div></section>
+      <section className="nd-service-method">
+        <div className="container nd-service-method-inner">
+          <span className="nd-eyebrow"><span/> A BETTER WAY TO BUILD</span>
+          <h2>Thoughtful strategy.<br/><em>Beautiful execution.</em></h2>
+          <div className="nd-service-method-grid">
+            <div><strong>01 / UNDERSTAND</strong><p>Define goals, audience and what success means for the product.</p></div>
+            <div><strong>02 / DESIGN</strong><p>Shape an intuitive experience before engineering it.</p></div>
+            <div><strong>03 / SHIP</strong><p>Build, test and iterate with clear priorities and maintainable code.</p></div>
+          </div>
+          <Link href="/work" className="nd-btn nd-btn-outline">Explore our work <ArrowRight size={18}/></Link>
+        </div>
+      </section>
+      <section className="nd-end-cta"><div className="container nd-end-cta-inner"><div><span><Sparkles size={16}/> YOUR NEXT IDEA STARTS HERE</span><h2>Let&apos;s build something<br/><em>worth remembering.</em></h2></div><Link href="/contact" className="nd-btn nd-btn-primary">Start a project <ArrowUpRight size={18}/></Link></div></section>
     </>
   );
 }
