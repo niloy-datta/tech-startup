@@ -6,6 +6,7 @@ const routes = [
   "services/index.html",
   "work/index.html",
   "solutions/index.html",
+  "labs/index.html",
   "about/index.html",
   "contact/index.html",
   "privacy/index.html",
@@ -16,42 +17,53 @@ const routes = [
 for (const route of routes) {
   assert.ok(existsSync("out/" + route), "Missing static file: out/" + route);
 }
-
 const read = (route) => readFileSync("out/" + route, "utf8");
 
 const homepage = read("index.html");
-assert.match(homepage, /INDEPENDENT DIGITAL PRODUCT STUDIO/, "NBD home hero missing");
-assert.match(homepage, /AgriLume AI/, "Featured engineering work missing from homepage");
+assert.match(homepage, /KADHAVIRA/, "Kadhavira brand wordmark is missing");
+assert.match(homepage, /AI.*SOFTWARE.*SAAS.*CLOUD.*RESEARCH/s, "Brand capabilities missing");
+assert.match(homepage, /AgriLume AI/, "Featured project missing from homepage");
+assert.match(homepage, /href="\/tech-startup\/labs\/?"/, "Labs navigation is missing");
+assert.match(homepage, /kl-home-bridge/, "Labs homepage introduction missing");
+assert.doesNotMatch(homepage, />NBD</, "Old NBD wordmark is still visible");
+
+const labs = read("labs/index.html");
+for (const discipline of ["ARTIFICIAL INTELLIGENCE","SOFTWARE ENGINEERING","SAAS PRODUCTS","CLOUD SYSTEMS","RESEARCH"]) {
+  assert.ok(labs.includes(discipline), discipline + " absent from the Labs page");
+}
+assert.match(labs, /kl-pillar-grid/, "Labs five-pillar grid is missing");
+assert.match(labs, /practice-areas/, "Labs anchor is missing");
 
 const work = read("work/index.html");
 assert.match(work, /Real projects/, "Work page hero missing");
-assert.match(work, /AgriLume AI/, "Work page must include AgriLume");
-assert.match(work, /SSC/, "Work page must include educational projects");
-assert.match(work, /project-catalog/, "Project catalog and filters missing");
+assert.match(work, /AgriLume AI/, "AgriLume project missing");
+assert.match(work, /project-agrilume/, "Deep links into portfolio missing");
+assert.match(work, /project-catalog/, "Portfolio catalog and filters missing");
+assert.match(work, /SSC/, "Education projects missing");
 
 const services = read("services/index.html");
-assert.match(services, /Everything you need/, "Redesigned Services hero missing");
-assert.match(services, /nd-service-grid/, "Six-service visual grid missing");
-assert.match(services, /Mobile app development/, "Mobile development service missing");
-assert.match(services, /AI &amp; automation|AI & automation/, "AI service missing");
+assert.match(services, /Everything you need/, "Services hero missing");
+assert.match(services, /nd-service-grid/, "Service visual grid missing");
+assert.match(services, /Mobile app development/, "Mobile services missing");
 
 const solutions = read("solutions/index.html");
 assert.match(solutions, /Industry-focused/, "Solutions hero missing");
-assert.match(solutions, /nd-solutions-grid/, "Solutions grid missing");
-assert.match(solutions, /Operations &amp; logistics|Operations & logistics/, "Operations solution missing");
+assert.match(solutions, /nd-solutions-grid/, "Solution directory missing");
 
 const about = read("about/index.html");
-assert.match(about, /A small studio/, "About page hero missing");
-assert.match(about, /nd-about-story/, "About studio story missing");
+assert.match(about, /KADHAVIRA LABS/, "About brand copy missing");
+assert.match(about, /nd-about-story/, "About content missing");
 
 const contact = read("contact/index.html");
-assert.match(contact, /nd-contact-form-shell/, "Redesigned inquiry form wrapper missing");
-assert.match(contact, /PROJECT INQUIRY/, "Project inquiry heading missing");
+assert.match(contact, /nd-contact-form-shell/, "Contact inquiry form missing");
+assert.match(contact, /PROJECT INQUIRY/, "Contact heading missing");
+
+const privacy = read("privacy/index.html");
+assert.match(privacy, /KADHAVIRA LABS/, "Privacy disclosure uses old brand");
 
 const sitemap = read("sitemap.xml");
-assert.ok(sitemap.includes("/tech-startup/solutions/"), "Solutions URL missing from sitemap");
-assert.ok(sitemap.includes("/tech-startup/work/"), "Work URL missing from sitemap");
-const robots = read("robots.txt");
-assert.match(robots, /sitemap\.xml/, "robots.txt must reference sitemap");
-
-console.log("NBD visual redesign static checks passed for " + routes.length + " expected files.");
+for (const route of ["labs","solutions","work","services","contact"]) {
+  assert.ok(sitemap.includes("/tech-startup/" + route + "/"), "Missing " + route + " from sitemap");
+}
+assert.match(read("robots.txt"), /sitemap\.xml/, "robots.txt must reference sitemap");
+console.log("KADHAVIRA LABS static checks passed: " + routes.length + " routes and brand consistency.");
