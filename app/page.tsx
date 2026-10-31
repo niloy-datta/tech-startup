@@ -10,7 +10,7 @@ import { workSteps, services } from "@/lib/site";
 import { solutions } from "@/lib/solutions";
 
 const questions = [
-  { q: "Can NBD build both a website and a mobile app?", a: "Yes. We can plan cohesive web and mobile experiences, or focus on one product first and expand as your needs evolve." },
+  { q: "Can KADHAVIRA LABS build both a website and a mobile app?", a: "Yes. We can plan cohesive web and mobile experiences, or focus on one product first and expand as your needs evolve." },
   { q: "Can you work with an early-stage idea?", a: "Absolutely. We can help clarify requirements, shape a practical MVP and identify the features to build first." },
   { q: "Do you offer custom solutions?", a: "Yes. From internal dashboards to integrations and business platforms, the solution is shaped around your workflow rather than a fixed template." },
   { q: "What happens after launch?", a: "We can discuss ongoing improvements, monitoring, maintenance and additional features based on your product's needs." },
@@ -21,8 +21,8 @@ export default function Home() {
     <>
       <StudioHero />
 
-      <section className="brand-ticker" aria-label="What NBD creates">
-        <div className="ticker-inner"><span>WEB EXPERIENCES</span><Sparkles/><span>MOBILE APPLICATIONS</span><Sparkles/><span>PRODUCT DESIGN</span><Sparkles/><span>SMART SOFTWARE</span><Sparkles/><span>WEB EXPERIENCES</span><Sparkles/></div>
+      <section className="brand-ticker" aria-label="What KADHAVIRA LABS creates">
+        <div className="ticker-inner"><span>ARTIFICIAL INTELLIGENCE</span><Sparkles/><span>SOFTWARE ENGINEERING</span><Sparkles/><span>SAAS PRODUCTS</span><Sparkles/><span>CLOUD SYSTEMS</span><Sparkles/><span>RESEARCH</span><Sparkles/></div>
       </section>
 
       <FeaturedStories />
@@ -105,7 +105,7 @@ export default function Home() {
       <section className="prefooter-section">
         <div className="container prefooter-inner">
           <span className="prefooter-mark"><Sparkles size={22} /> YOUR NEXT MOVE STARTS HERE</span>
-          <div><h2>The next big thing?<br/><em>It starts with you.</em></h2><Link href="/contact" className="round-arrow" aria-label="Start a project with NBD"><ArrowUpRight size={40}/></Link></div>
+          <div><h2>The next big thing?<br/><em>It starts with you.</em></h2><Link href="/contact" className="round-arrow" aria-label="Start a project with KADHAVIRA LABS"><ArrowUpRight size={40}/></Link></div>
           <p>Tell us what you&apos;re imagining, solving or trying to change. We&apos;d love to hear about it.</p>
           <Link href="/contact" className="prefooter-mobile-link">Start a project <ChevronRight size={18}/></Link>
         </div>
