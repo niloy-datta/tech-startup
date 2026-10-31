@@ -73,6 +73,17 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="kl-home-bridge" aria-labelledby="kl-home-bridge-title">
+        <div className="container kl-home-bridge-inner">
+          <div>
+            <span className="nd-eyebrow"><span/> EXPLORE THE LABS</span>
+            <h2 id="kl-home-bridge-title">Five disciplines.<br/><em>One curious mindset.</em></h2>
+            <p>AI • Software • SaaS • Cloud • Research. Discover how these disciplines connect to turn ambitious technical ideas into grounded products and prototypes.</p>
+          </div>
+          <Link className="kl-home-bridge-link" href="/labs">Inside KADHAVIRA LABS <ArrowUpRight size={19} aria-hidden="true"/></Link>
+        </div>
+      </section>
+
       <StudioPhilosophy />
 
       <ProjectPlanner />
