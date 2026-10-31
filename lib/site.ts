@@ -5,11 +5,11 @@ export const brand = "NBD";
 export const contactEmail = process.env.NEXT_PUBLIC_NBD_CONTACT_EMAIL ?? "";
 
 export const mainNav = [
+  { label: "Home", href: "/" },
+  { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
-  { label: "Our work", href: "/work" },
   { label: "Solutions", href: "/solutions" },
   { label: "About", href: "/about" },
-  { label: "Our approach", href: "/#process" },
   { label: "Contact", href: "/contact" },
 ];
 
