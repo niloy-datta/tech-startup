@@ -26,17 +26,26 @@ jobs:
           node-version: 22
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Validate Pages publishing source
+      - name: Ensure GitHub Actions is the Pages source
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
           mode="$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .build_type)"
-          echo "GitHub Pages publishing mode: $mode"
+          echo "Current Pages publishing mode: $mode"
           if [[ "$mode" != "workflow" ]]; then
-            echo "::error title=Incorrect GitHub Pages source::Settings > Pages > Build and deployment > Source must be GitHub Actions, not Deploy from a branch."
-            echo "Fix here: https://github.com/$GITHUB_REPOSITORY/settings/pages"
+            echo "Attempting to change Pages source to GitHub Actions with the repository token."
+            if ! gh api --method PUT "repos/$GITHUB_REPOSITORY/pages" -f build_type=workflow; then
+              echo "::error title=GitHub Pages configuration requires owner action::Open Settings > Pages > Build and deployment, select GitHub Actions as the source, then re-run this workflow."
+              echo "Settings: https://github.com/$GITHUB_REPOSITORY/settings/pages"
+              exit 1
+            fi
+          fi
+          mode="$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .build_type)"
+          echo "Verified Pages publishing mode: $mode"
+          if [[ "$mode" != "workflow" ]]; then
+            echo "::error title=Incorrect GitHub Pages source::GitHub Pages publishing mode did not change to GitHub Actions."
             exit 1
           fi
       - name: Install dependencies
