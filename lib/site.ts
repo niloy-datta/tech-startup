@@ -1,14 +1,16 @@
-export const brand = "NBD";
+export const brand = "KADHAVIRA LABS";
+export const brandCapabilities = ["AI", "Software", "SaaS", "Cloud", "Research"] as const;
 
 // Update this in your environment before production launch. No company domain
 // or business email has been assumed.
-export const contactEmail = process.env.NEXT_PUBLIC_NBD_CONTACT_EMAIL ?? "";
+export const contactEmail = process.env.NEXT_PUBLIC_KADHAVIRA_CONTACT_EMAIL ?? process.env.NEXT_PUBLIC_NBD_CONTACT_EMAIL ?? "";
 
 export const mainNav = [
   { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
   { label: "Solutions", href: "/solutions" },
+  { label: "Labs", href: "/labs" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
