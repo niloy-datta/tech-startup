@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { contactEmail } from "@/lib/site";
+import { contactEmail, brandCapabilities } from "@/lib/site";
+import { BrandMark } from "@/components/brand-mark";
 
 export function SiteFooter() {
   return (
@@ -13,17 +14,18 @@ export function SiteFooter() {
             <Link className="btn btn-lime" href="/contact">Start a conversation <ArrowUpRight size={19} /></Link>
           </div>
           <div className="footer-aside">
-            <p>Websites, mobile apps and digital products built around ideas worth pursuing.</p>
+            <p>Applied AI, product engineering, SaaS and cloud systems—built around ideas worth pursuing.</p>
             {contactEmail && <a href={`mailto:${contactEmail}`} className="footer-email">{contactEmail}</a>}
           </div>
         </div>
+        <p className="kl-footer-capabilities">{brandCapabilities.join("  •  ")}</p>
         <div className="footer-bottom">
-          <Link href="/" className="brand footer-brand" aria-label="NBD home">
-            <span className="brand-symbol" aria-hidden="true"><span /><span /><span /></span>
-            <span>NBD<span className="brand-period">.</span></span>
+          <Link href="/" className="brand footer-brand" aria-label="Kadhavira Labs home">
+            <BrandMark footer />
           </Link>
-          <p>© {new Date().getFullYear()} NBD. Built with intention.</p>
+          <p>© {new Date().getFullYear()} KADHAVIRA LABS. Built with intention.</p>
           <div className="footer-links">
+            <Link href="/labs">Labs</Link>
             <Link href="/services">Services</Link>
             <Link href="/work">Our work</Link>
             <Link href="/solutions">Solutions</Link>
