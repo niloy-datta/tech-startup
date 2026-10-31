@@ -1,43 +1,81 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, Compass, HeartHandshake, Lightbulb, Wrench } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CheckCircle2, Code2, Compass, HeartHandshake, Lightbulb, Sparkles, TerminalSquare, Wrench } from "lucide-react";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://niloy-datta.github.io/tech-startup/about/" }, title: "About NBD", description: "Meet NBD: a digital development company focused on useful websites, mobile apps and custom solutions shaped around people and business goals." };
+  alternates: { canonical: "https://niloy-datta.github.io/tech-startup/about/" },
+  title: "About NBD",
+  description: "Meet the people and thinking behind NBD: design-led digital product development backed by engineering and meaningful collaboration.",
+};
 
-const beliefs = [
-  { icon: Compass, title: "Start with the why", description: "Clear thinking up front gives every product a stronger direction." },
-  { icon: HeartHandshake, title: "Build together", description: "Useful digital experiences take open conversations and shared understanding." },
-  { icon: Wrench, title: "Care about the details", description: "Performance, accessibility and the little interactions all matter." },
-  { icon: Lightbulb, title: "Keep improving", description: "The best launch is a beginning, not the final destination." },
+const values = [
+  { icon: Lightbulb, title: "Innovation", desc: "We explore new approaches when a better solution is possible." },
+  { icon: Compass, title: "Simplicity", desc: "We design clear journeys that keep the important things easy." },
+  { icon: HeartHandshake, title: "Partnership", desc: "Great work grows through honest conversations and shared priorities." },
+  { icon: Wrench, title: "Craft", desc: "Performance, accessibility and the finer details all matter." },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="interior-hero"><div className="container">
-        <span className="eyebrow light"><span className="eyebrow-dot" /> WHO WE ARE</span>
-        <h1>Technology with a <em>human point of view.</em></h1>
-        <p>We&apos;re NBD, a digital product and software development brand built around a simple belief: ideas deserve more than ordinary execution.</p>
-      </div></section>
-      <section className="section about-story"><div className="container about-grid">
-        <div><span className="eyebrow"><span className="eyebrow-dot" /> OUR STORY</span><h2>We&apos;re here for the <em>things you want to create.</em></h2></div>
-        <div className="about-story-copy">
-          <p className="large-copy">Businesses are shaped by ideas. Digital experiences are how many of those ideas meet the world.</p>
-          <p>NBD focuses on helping people and businesses turn those ideas into websites, mobile applications and software that feels considered from the first click.</p>
-          <p>Our approach connects product thinking, experience design and development. Whether the goal is a new digital presence, a mobile-first product or a smarter way to run operations, we start by understanding the problem and build with the end user in mind.</p>
-          <Link href="/services" className="text-link">Explore our capabilities <ArrowUpRight size={19}/></Link>
+      <section className="nd-subhero nd-about-hero">
+        <div className="container nd-subhero-inner nd-subhero-inner-compact">
+          <span className="nd-eyebrow"><span/> ABOUT NBD / THE PEOPLE BEHIND THE PRODUCTS</span>
+          <h1>A small studio.<br/><em>A bigger ambition.</em></h1>
+          <p>We believe thoughtful design, solid engineering and close collaboration can turn ambitious ideas into useful digital products.</p>
+          <Link href="/contact" className="nd-btn nd-btn-primary">Meet us through a project <ArrowUpRight size={18}/></Link>
+        </div>
+      </section>
+      <section className="nd-about-story">
+        <div className="container nd-about-story-grid">
+          <div className="nd-about-scene" aria-label="Illustrative engineering studio screen">
+            <div className="nd-about-scene-halo"/>
+            <div className="nd-about-terminal">
+              <div className="nd-terminal-top"><span><i/><i/><i/></span> PRODUCT STUDIO / DESIGN + ENGINEERING <TerminalSquare size={15}/></div>
+              <div className="nd-terminal-content">
+                <span className="nd-terminal-comment">// Thoughtful technology starts with people.</span>
+                <span><b>const</b> nbd = {"{"}</span>
+                <span className="nd-code-indent">vision: <em>&quot;Build with purpose&quot;</em>,</span>
+                <span className="nd-code-indent">principles: [</span>
+                <span className="nd-code-indent nd-code-indent-two"><em>&quot;Clarity&quot;</em>, <em>&quot;Craft&quot;</em>, <em>&quot;Care&quot;</em></span>
+                <span className="nd-code-indent">],</span>
+                <span className="nd-code-indent">focus: <em>&quot;People first&quot;</em></span>
+                <span>{"}"};</span>
+              </div>
+              <div className="nd-terminal-footer"><Code2 size={15}/> DESIGN SYSTEMS / WEB / APPS / AI <span>✳</span></div>
+            </div>
+            <div className="nd-about-scene-chip"><Sparkles size={17}/> Made with intention</div>
+          </div>
+          <div className="nd-about-story-copy">
+            <span className="nd-eyebrow"><span/> THE THINKING BEHIND NBD</span>
+            <h2>Curious minds.<br/><em>Purposeful work.</em></h2>
+            <p className="nd-about-lead">We&apos;re an independent digital product studio with a passion for turning complex ideas into intuitive experiences.</p>
+            <p>Our work connects product strategy, design and software engineering. From early prototypes to useful business platforms, we start by understanding the problem and the people who need the solution.</p>
+            <p>Our portfolio includes projects, experiments and previous engineering experience—not fabricated client case studies. We want the work and the process to speak for themselves.</p>
+            <Link href="/work" className="nd-inline-cta">Explore our work <ArrowUpRight size={18}/></Link>
+          </div>
+        </div>
+      </section>
+      <section className="nd-values-section">
+        <div className="container">
+          <div className="nd-section-head"><span className="nd-eyebrow"><span/> WHAT GUIDES US</span><h2>Principles behind <em>every pixel.</em></h2></div>
+          <div className="nd-values-grid">
+            {values.map(({icon:Icon,title,desc},i)=><article className="nd-value" key={title}>
+              <span className="nd-value-count">0{i+1} /</span><div className="nd-value-icon"><Icon size={26}/></div>
+              <h3>{title}</h3><p>{desc}</p>
+            </article>)}
+          </div>
+        </div>
+      </section>
+      <section className="nd-about-belief"><div className="container nd-about-belief-inner">
+        <div><span className="nd-eyebrow"><span/> OUR COMMITMENT</span><h2>Built with clarity.<br/><em>Engineered to last.</em></h2></div>
+        <div><p>We care about the whole product journey, not just the first screen. Collaboration, maintainable engineering and continuous improvement shape how we work.</p>
+          <div className="nd-belief-item"><CheckCircle2 size={18}/> Thoughtful product discovery and experience design</div>
+          <div className="nd-belief-item"><CheckCircle2 size={18}/> Software built around real-world use</div>
+          <Link href="/services" className="nd-inline-cta">Explore our services <ArrowRight size={18}/></Link>
         </div>
       </div></section>
-      <section className="section values-section"><div className="container">
-        <div className="section-intro"><span className="eyebrow"><span className="eyebrow-dot" /> WHAT GUIDES US</span><h2>Our principles, <em>in practice.</em></h2></div>
-        <div className="values-grid">{beliefs.map(({icon:Icon,title,description}) => <div className="value-card" key={title}><Icon size={28} strokeWidth={1.6}/><h3>{title}</h3><p>{description}</p></div>)}</div>
-      </div></section>
-      <section className="section about-vision"><div className="container vision-layout">
-        <div className="vision-mark"><div>N<span>B</span>D<span className="adv-dot">.</span></div><span>IDEAS INTO IMPACT</span></div>
-        <div><span className="eyebrow light"><span className="eyebrow-dot" /> OUR DIRECTION</span><h2>A digital partner for <em>what comes next.</em></h2><p>We aim to create useful, well-designed products that help ambitious businesses work smarter, connect better and keep growing.</p><div className="vision-check"><CheckCircle2 size={20}/> Practical solutions, shaped around real needs</div><div className="vision-check"><CheckCircle2 size={20}/> A thoughtful balance of design and engineering</div></div>
-      </div></section>
-      <section className="mini-cta"><div className="container"><div><span>LET&apos;S GET ACQUAINTED</span><h2>Tell us what you&apos;re building.</h2></div><Link href="/contact" className="btn btn-lime">Talk to NBD <ArrowUpRight size={18}/></Link></div></section>
+      <section className="nd-end-cta"><div className="container nd-end-cta-inner"><div><span>LET&apos;S CREATE SOMETHING MEANINGFUL</span><h2>Have a big idea?<br/><em>Let&apos;s give it a shape.</em></h2></div><Link href="/contact" className="nd-btn nd-btn-primary">Start a conversation <ArrowUpRight size={18}/></Link></div></section>
     </>
   );
 }
