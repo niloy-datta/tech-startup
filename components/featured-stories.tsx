@@ -7,11 +7,11 @@ export function FeaturedStories() {
       <div className="container">
         <div className="nbd-stories-heading">
           <div>
-            <span className="nbd-section-label"><span /> FEATURED EXPERIENCES / NBD</span>
+            <span className="nbd-section-label"><span /> FEATURED EXPERIENCES / KADHAVIRA LABS</span>
             <h2 id="nbd-stories-title">Real thinking.<br /><em>Real things built.</em></h2>
           </div>
           <div className="nbd-stories-intro">
-            <p>Explore how the team behind NBD approaches problems across AI, interactive experiences, mobile products and operational software.</p>
+            <p>Explore how the team behind KADHAVIRA LABS approaches problems across AI, interactive experiences, mobile products and operational software.</p>
             <Link href="/work" className="nbd-inline-link">Explore all projects <ArrowUpRight size={18} /></Link>
           </div>
         </div>
@@ -81,7 +81,7 @@ export function FeaturedStories() {
         </div>
 
         <div className="nbd-stories-bottom">
-          <p>These are team builds, prototypes, explorations and prior industry experience—not all commissioned NBD client work. Visuals are illustrative.</p>
+          <p>These are team builds, prototypes, explorations and prior industry experience—not all commissioned KADHAVIRA LABS client work. Visuals are illustrative.</p>
           <Link href="/work">View the complete workbench <ArrowRight size={17} /></Link>
         </div>
       </div>
