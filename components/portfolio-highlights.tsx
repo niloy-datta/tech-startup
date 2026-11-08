@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, CheckCircle2, Layers3, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CheckCircle2, Layers3, ShieldCheck } from "lucide-react";
 import { flagshipProducts, portfolioCategories } from "@/lib/portfolio";
 
 export function PortfolioHighlights() {
@@ -24,7 +24,7 @@ export function PortfolioHighlights() {
       </section>
       <section className="ps-categories" id="categories" aria-labelledby="ps-categories-heading">
         <div className="container">
-          <div className="ps-heading ps-heading-compact"><div><span className="ps-kicker"><span/> THE PRODUCT UNIVERSE</span><h2 id="ps-categories-heading">Ten possibilities.<br/><em>Three priorities.</em></h2></div><p>Our portfolio map shows where we're heading. AI, SaaS and web applications lead Phase 1; other areas follow customer validation.</p></div>
+          <div className="ps-heading ps-heading-compact"><div><span className="ps-kicker"><span/> THE PRODUCT UNIVERSE</span><h2 id="ps-categories-heading">Ten possibilities.<br/><em>Three priorities.</em></h2></div><p>Our portfolio map shows where we&apos;re heading. AI, SaaS and web applications lead Phase 1; other areas follow customer validation.</p></div>
           <div className="ps-categories-grid">
             {portfolioCategories.map((category) => (
               <Link href={"/products#"+category.slug} className={"ps-category "+(category.phase===1?"ps-category-core":"")} key={category.slug}>
