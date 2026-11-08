@@ -80,3 +80,17 @@ The [GitHub Pages publishing workflow](.github/workflows/deploy-pages.yml) runs 
 5. Verify the final UI visually on desktop, tablet and mobile browsers.
 
 No fabricated customer metrics, client logos, testimonials, company certificates or claims of registered intellectual property are included.
+
+
+## Product Portfolio & Website Strategy 2026–2027
+
+The 2026–2027 portfolio strategy is now reflected in the source website:
+
+- **Priority:** AI & Automation, SaaS & Business Software, Web & Mobile Applications.
+- **Flagship concepts:** RFQ & Quotation Assistant and Workflow & Email Automation Assistant, both explicitly labelled **Coming Soon** while undergoing validation.
+- **Roadmap:** ten technology categories, organized by Phases 1–3. Developer Tools and Data Analytics are alternative Phase 2 candidates, not concurrent product launch commitments.
+- **Routes:** `/products/` with search/phase filters, two static product detail pages, `/pricing/`, `/developers/`, `/research/`. Existing services, solutions, work and labs remain available.
+- **Guardrails:** human approval before AI-driven external actions; no fabricated subscriptions, customer metrics, certifications or launches.
+- **Validation gates:** 25–30 customer interviews and at least three paid pilots before category expansion, then retention and unit economics before Phase 3.
+
+This is a marketing-site and product-roadmap update. It does not implement the underlying pilot software, payment billing, an authenticated product workspace, or a backend contact form. The public contact enquiry remains email-draft based until a verified inbox and a submission service are configured.

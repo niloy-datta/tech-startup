@@ -16,14 +16,14 @@ export function StudioHero() {
       <div className="nbd-hero-mesh" aria-hidden="true" />
       <div className="container nbd-hero-grid">
         <div className="nbd-hero-copy">
-          <p className="nbd-kicker"><span className="nbd-kicker-dot" /> AI • SOFTWARE • SAAS • CLOUD • RESEARCH <span className="nbd-kicker-star">✳</span> KADHAVIRA LABS</p>
-          <h1 id="nbd-hero-title">Intelligent ideas.<br /><span>Engineered into reality.</span></h1>
+          <p className="nbd-kicker"><span className="nbd-kicker-dot" /> AI & AUTOMATION • B2B SAAS • WEB PLATFORMS <span className="nbd-kicker-star">✳</span> KADHAVIRA LABS</p>
+          <h1 id="nbd-hero-title">Useful intelligence.<br /><span>Practical products.</span></h1>
           <p className="nbd-hero-intro">
-            From AI and research to ambitious SaaS platforms, cloud systems and custom software—we turn complex ideas into useful digital products.
+            We are building toward a focused portfolio of AI automation, B2B software and web platforms. Explore our first two pilot concepts and the technology roadmap behind them.
           </p>
           <div className="nbd-hero-buttons">
-            <Link href="/contact" className="nbd-primary-button">Start a project <ArrowUpRight size={18} aria-hidden="true" /></Link>
-            <Link href="/#featured-work" className="nbd-text-button">Explore our work <ArrowRight size={18} aria-hidden="true" /></Link>
+            <Link href="/products" className="nbd-primary-button">Explore products <ArrowUpRight size={18} aria-hidden="true" /></Link>
+            <Link href="/contact" className="nbd-text-button">Discuss a pilot <ArrowRight size={18} aria-hidden="true" /></Link>
           </div>
           <div className="nbd-hero-proof" aria-label="Our capabilities">
             <span><strong>01</strong> Product thinking</span>

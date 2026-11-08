@@ -4,6 +4,12 @@ import assert from "node:assert/strict";
 const routes = [
   "index.html",
   "services/index.html",
+  "products/index.html",
+  "products/rfq-quotation-assistant/index.html",
+  "products/workflow-email-assistant/index.html",
+  "research/index.html",
+  "developers/index.html",
+  "pricing/index.html",
   "work/index.html",
   "solutions/index.html",
   "labs/index.html",
@@ -25,8 +31,18 @@ assert.match(homepage, /AI.*SOFTWARE.*SAAS.*CLOUD.*RESEARCH/s, "Brand capabiliti
 assert.match(homepage, /AgriLume AI/, "Featured project missing from homepage");
 assert.match(homepage, /href="\/(?:tech-startup\/)?labs\/"/, "Labs navigation is missing");
 assert.match(homepage, /kl-home-bridge/, "Labs homepage introduction missing");
+assert.match(homepage, /Ten possibilities/, "Ten-category portfolio teaser missing");
+assert.match(homepage, /Coming Soon/, "Truthful pilot availability missing");
 assert.doesNotMatch(homepage, />NBD</, "Old NBD wordmark is still visible");
 
+const products=read("products/index.html");
+for (const label of ["RFQ &amp; Quotation Assistant", "Workflow &amp; Email Automation Assistant","Developer Tools","Cybersecurity","Research"]) {
+  assert.ok(products.includes(label), "Missing portfolio entry: "+label);
+}
+for (const route of ["products/rfq-quotation-assistant/index.html","products/workflow-email-assistant/index.html"]) {
+  assert.match(read(route), /human/i, "Human approval guardrail missing from "+route);
+}
+assert.match(read("pricing/index.html"), /not published subscription prices/, "Pricing should not claim live subscription plans");
 const labs = read("labs/index.html");
 for (const discipline of ["ARTIFICIAL INTELLIGENCE","SOFTWARE ENGINEERING","SAAS PRODUCTS","CLOUD SYSTEMS","RESEARCH"]) {
   assert.ok(labs.includes(discipline), discipline + " absent from the Labs page");
@@ -62,7 +78,7 @@ const privacy = read("privacy/index.html");
 assert.match(privacy, /KADHAVIRA LABS/, "Privacy disclosure uses old brand");
 
 const sitemap = read("sitemap.xml");
-for (const route of ["labs","solutions","work","services","contact"]) {
+for (const route of ["products","research","developers","pricing","labs","solutions","work","services","contact"]) {
   assert.ok(sitemap.includes("/tech-startup/" + route + "/"), "Missing " + route + " from sitemap");
 }
 assert.match(read("robots.txt"), /sitemap\.xml/, "robots.txt must reference sitemap");
