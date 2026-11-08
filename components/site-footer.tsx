@@ -25,6 +25,10 @@ export function SiteFooter() {
           </Link>
           <p>© {new Date().getFullYear()} KADHAVIRA LABS. Built with intention.</p>
           <div className="footer-links">
+            <Link href="/products">Products</Link>
+            <Link href="/pricing">Pricing</Link>
+            <Link href="/developers">Developers</Link>
+            <Link href="/research">Research</Link>
             <Link href="/labs">Labs</Link>
             <Link href="/services">Services</Link>
             <Link href="/work">Our work</Link>

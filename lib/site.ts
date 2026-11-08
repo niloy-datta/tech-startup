@@ -6,12 +6,13 @@ export const brandCapabilities = ["AI", "Software", "SaaS", "Cloud", "Research"]
 export const contactEmail = process.env.NEXT_PUBLIC_KADHAVIRA_CONTACT_EMAIL ?? process.env.NEXT_PUBLIC_NBD_CONTACT_EMAIL ?? "";
 
 export const mainNav = [
-  { label: "Home", href: "/" },
-  { label: "Work", href: "/work" },
-  { label: "Services", href: "/services" },
+  { label: "Products", href: "/products" },
   { label: "Solutions", href: "/solutions" },
-  { label: "Labs", href: "/labs" },
-  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Research", href: "/research" },
+  { label: "Developers", href: "/developers" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Company", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 

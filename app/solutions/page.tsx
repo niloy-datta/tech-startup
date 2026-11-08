@@ -24,6 +24,21 @@ export default function SolutionsPage() {
           <Link href="/contact" className="nd-btn nd-btn-primary">Discuss your challenge <ArrowUpRight size={18}/></Link>
         </div>
       </section>
+
+      <section className="ps-industries" aria-labelledby="ps-industries-title">
+        <div className="container">
+          <div className="ps-heading"><div><span className="ps-kicker"><span/> INDUSTRY SOLUTIONS</span><h2 id="ps-industries-title">One approach.<br/><em>Different industries.</em></h2></div><p>These are areas where discovery-led software could help—not claims of completed customer engagements.</p></div>
+          <div className="ps-industries-grid">
+            {[
+              {name:"Logistics & Trading",detail:"RFQs, supplier sourcing, shipment visibility and document workflows."},
+              {name:"E-commerce",detail:"Storefronts, customer support, orders and connected operations."},
+              {name:"Professional Services",detail:"Client intake, approvals, CRM and repeatable service delivery."},
+              {name:"Education",detail:"Student portals, content workflows and digital learning experiences."},
+              {name:"Agriculture",detail:"Applied insights, data tools and research-led field experiences."},
+            ].map((industry,index)=><article key={industry.name}><span>0{index+1}</span><h3>{industry.name}</h3><p>{industry.detail}</p><Link href="/contact">Explore this use case <ArrowUpRight size={16}/></Link></article>)}
+          </div>
+        </div>
+      </section>
       <section className="nd-solutions-section">
         <div className="container">
           <div className="nd-section-head"><span className="nd-eyebrow"><span/> WHAT WE CAN HELP CREATE</span><h2>Built around <em>real needs.</em></h2><p>These are possible product directions—not claims of completed client engagements.</p></div>

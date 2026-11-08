@@ -12,6 +12,7 @@ import "./nav-experience.css";
 import "./nav-art.css";
 import "./atelier-evolution.css";
 import "./kadhavira-brand.css";
+import "./portfolio-strategy.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
@@ -22,8 +23,8 @@ const organization = { "@context": "https://schema.org", "@type": "Organization"
 export const metadata: Metadata = {
   metadataBase: new URL(canonical),
   alternates: { canonical },
-  title: { default: "KADHAVIRA LABS — AI • Software • SaaS • Cloud • Research", template: "%s | KADHAVIRA LABS" },
-  description: "KADHAVIRA LABS explores and engineers applied AI, custom software, SaaS products, cloud systems and research-driven digital experiences.",
+  title: { default: "KADHAVIRA LABS — AI Automation, B2B SaaS & Web Products", template: "%s | KADHAVIRA LABS" },
+  description: "Explore KADHAVIRA LABS AI automation pilot concepts, B2B SaaS products, web platforms and engineering services. See our transparent 2026–2027 product roadmap.",
   applicationName: "KADHAVIRA LABS",
   keywords: ["KADHAVIRA LABS", "AI product engineering", "software development", "SaaS platforms", "cloud systems", "research and development", "web development", "mobile app development", "UI UX design"],
   openGraph: {

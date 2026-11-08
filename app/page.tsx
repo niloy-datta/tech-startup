@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, ChevronRight, Sparkles } from "lucide-react";
 import { StudioHero } from "@/components/studio-hero";
+import { PortfolioHighlights } from "@/components/portfolio-highlights";
 import { FeaturedStories } from "@/components/featured-stories";
 import { StudioPhilosophy } from "@/components/studio-philosophy";
 import { CapabilityPreview } from "@/components/capability-preview";
@@ -20,6 +21,8 @@ export default function Home() {
   return (
     <>
       <StudioHero />
+
+      <PortfolioHighlights />
 
       <section className="brand-ticker" aria-label="What KADHAVIRA LABS creates">
         <div className="ticker-inner"><span>ARTIFICIAL INTELLIGENCE</span><Sparkles/><span>SOFTWARE ENGINEERING</span><Sparkles/><span>SAAS PRODUCTS</span><Sparkles/><span>CLOUD SYSTEMS</span><Sparkles/><span>RESEARCH</span><Sparkles/></div>
